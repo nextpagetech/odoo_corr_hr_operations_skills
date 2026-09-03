@@ -1,6 +1,6 @@
 {
     "name": "HR Operations Skills",
-    "summary": "Adds Operations skill type for employees and syncs skills from corrugation engine operations.",
+    "summary": "Match MRP work order employees by HR Operations skills",
     "version": "18.0.1.0.0",
     "description": """
 Adds Operations skills for employees, syncs operation skills from the corrugation engine, and filters work order employee selection by matching operation skills.
@@ -19,6 +19,9 @@ Adds Operations skills for employees, syncs operation skills from the corrugatio
         "views/hr_employee_skill_views.xml",
         "views/workorder_employee_wizard_views.xml",
         "views/mrp_workorder_views.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
     ],
     "post_init_hook": "post_init_hook",
     "installable": True,

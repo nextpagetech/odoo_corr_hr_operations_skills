@@ -1,201 +1,328 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HR Operations Skills</title>
+<div class="npt-corr-hr-operations-skills">
     <style>
-        body {
-            margin: 0;
+        .npt-corr-hr-operations-skills {
             color: #1f2933;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            background: #ffffff;
         }
-        .npt-page {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 32px 20px 48px;
-        }
-        .npt-header {
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 24px;
-            margin-bottom: 28px;
-        }
-        .npt-kicker {
-            margin: 0 0 8px;
+        .npt-corr-hr-operations-skills .npt-kicker {
             color: #6b7280;
             font-size: 13px;
             font-weight: 700;
             letter-spacing: .04em;
             text-transform: uppercase;
         }
-        h1 {
-            margin: 0 0 12px;
+        .npt-corr-hr-operations-skills .npt-title {
             color: #111827;
             font-size: 34px;
             line-height: 1.2;
         }
-        h2 {
-            margin: 32px 0 12px;
+        .npt-corr-hr-operations-skills .npt-section-title {
             color: #111827;
             font-size: 22px;
             line-height: 1.3;
         }
-        p {
-            margin: 0 0 14px;
-        }
-        ul, ol {
-            margin: 0;
-            padding-left: 22px;
-        }
-        li {
-            margin: 8px 0;
-        }
-        .npt-lead {
-            max-width: 760px;
-            color: #374151;
-            font-size: 17px;
-        }
-        .npt-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            margin-top: 16px;
-        }
-        .npt-box {
+        .npt-corr-hr-operations-skills .npt-feature-card {
+            background: #f9fafb;
             border: 1px solid #e5e7eb;
             border-radius: 8px;
+            height: 100%;
             padding: 18px;
-            background: #f9fafb;
         }
-        .npt-box strong {
+        .npt-corr-hr-operations-skills .npt-feature-card strong {
+            color: #111827;
             display: block;
             margin-bottom: 6px;
-            color: #111827;
         }
-        .npt-note {
-            border-left: 4px solid #6b7280;
-            padding: 12px 16px;
+        .npt-corr-hr-operations-skills .npt-note {
             background: #f9fafb;
+            border-left: 4px solid #6b7280;
             color: #374151;
+            padding: 12px 16px;
         }
-        .npt-publisher {
+        .npt-corr-hr-operations-skills .npt-publisher {
             border-top: 1px solid #e5e7eb;
-            margin-top: 34px;
-            padding-top: 22px;
         }
-        a {
+        .npt-corr-hr-operations-skills a {
             color: #0f766e;
             text-decoration: none;
         }
-        a:hover {
+        .npt-corr-hr-operations-skills a:hover {
             text-decoration: underline;
         }
-        @media (max-width: 700px) {
-            .npt-page {
-                padding: 24px 16px 40px;
-            }
-            h1 {
-                font-size: 28px;
-            }
-            .npt-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
-</head>
-<body>
-    <main class="npt-page">
-        <header class="npt-header">
-            <p class="npt-kicker">Odoo HR and Manufacturing</p>
-            <h1>HR Operations Skills</h1>
-            <p class="npt-lead">
-                Connects corrugation operation types with employee Operations skills and uses those skills when selecting employees for work orders.
-            </p>
-        </header>
 
-        <section>
-            <h2>Overview</h2>
-            <p>
-                HR Operations Skills adds an Operations skill type with levels for employees and syncs operation skills from the corrugation engine.
-                It then uses those skills to filter and rank employees in work order employee selection.
-            </p>
-        </section>
-
-        <section>
-            <h2>Key Features</h2>
-            <div class="npt-grid">
-                <div class="npt-box">
-                    <strong>Operations skill type</strong>
-                    <p>Adds an Operations skill type with Trained, Competent, and Expert levels.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Operation skill sync</strong>
-                    <p>Creates HR skills from corrugation operation names using the corrugation operation type source.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Work order employee filtering</strong>
-                    <p>Restricts work order employee choices to active employees who match work center categories and operation skills.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Skill-aware employee ranking</strong>
-                    <p>Ranks employee search results by matching skill level and recent operation performance when available.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Picker override option</strong>
-                    <p>Adds a manager-only option to show all base-allowed employees when no skilled employee should be selected manually.</p>
-                </div>
-                <div class="npt-box">
-                    <strong>Employee skill selection cleanup</strong>
-                    <p>Filters the employee skill type selector to exclude Soft Skills in the skill selection popup.</p>
+    <section>
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="banner.png"
+                        class="img-fluid w-100"
+                        alt="HR Operations Skills for Odoo Manufacturing work order employee selection"
+                    >
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>How It Works</h2>
-            <ol>
-                <li>Install the module with HR Skills, Corrugation MRP Bridge, and Workorder Employee Picker.</li>
-                <li>The module seeds the Operations skill type and operation skill levels.</li>
-                <li>The post-install hook syncs corrugation operation names into HR skills.</li>
-                <li>Assign Operations skills to employees in HR.</li>
-                <li>When selecting employees on work orders, the addon filters and ranks employees by matching operation skill.</li>
-            </ol>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="npt-kicker mb-2">Odoo HR Skills and Manufacturing</p>
+                    <h1 class="npt-title mb-3">HR Operations Skills</h1>
+                    <p class="mb-0">
+                        HR Operations Skills adds an Operations skill type for employees and uses those skills in Odoo Manufacturing work order employee selection.
+                        It syncs operation skills from the corrugation operation engine and helps work orders show employees whose Operations skill matches the selected corrugation operation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Benefits</h2>
-            <ul>
-                <li>Helps align work order assignment with employee operation skills.</li>
-                <li>Reduces manual employee filtering during manufacturing work order execution.</li>
-                <li>Supports controlled override for managers when the skilled list is empty or insufficient.</li>
-                <li>Keeps operation skill records synchronized from the corrugation operation source.</li>
-            </ul>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Overview</h2>
+                    <p class="mb-0">
+                        This addon connects employee HR skills with corrugation manufacturing operations.
+                        It creates an Operations skill type with skill levels, synchronizes HR skill records from corrugation operation types, and applies operation-based filtering when choosing employees for MRP work orders.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Screenshots</h2>
-            <p class="npt-note">
-                No product screenshots are included in this package. Add real screenshots under <strong>static/description/images/</strong> before publishing if screenshots are required for the listing.
-            </p>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Key Features</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Operations skill type</strong>
+                        <p class="mb-0">Adds an HR skill type named Operations with Trained, Competent, and Expert skill levels.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Operation skill synchronization</strong>
+                        <p class="mb-0">Creates missing Operations skills from corrugation operation names provided by the corrugation operation engine.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Work order employee filtering</strong>
+                        <p class="mb-0">Limits work order employee selection to allowed employees whose Operations skill matches the work order corrugation operation.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Employee picker override</strong>
+                        <p class="mb-0">Adds a manager-only option to show all base-allowed employees when no skill-based restriction should be applied.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>Skill-based employee ranking</strong>
+                        <p class="mb-0">Ranks matching employees in the work order employee picker by skill level and recent work order performance where available.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="npt-feature-card">
+                        <strong>No skilled employee hint</strong>
+                        <p class="mb-0">Displays a message in the picker when a work order has an operation but no skilled employees are found.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Compatibility</h2>
-            <ul>
-                <li>Odoo 18.0</li>
-                <li>Requires HR Skills, Corrugation MRP Bridge, and Workorder Employee Picker.</li>
-            </ul>
-        </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">How It Works</h2>
+                    <ol class="mb-0">
+                        <li>The addon installs an Operations skill type and default Operations skill levels.</li>
+                        <li>After installation, it syncs HR skill records from corrugation operation types.</li>
+                        <li>Employees are assigned Operations skills manually through the standard HR Skills interface.</li>
+                        <li>When a Manufacturing work order has a corrugation operation type, employee selection is filtered by matching Operations skills.</li>
+                        <li>The work order employee picker can rank skilled employees and allows authorized managers to override the skill filter.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="npt-publisher">
-            <h2>Support / Publisher</h2>
-            <p>
-                <strong>Next Page Technologies Pvt Ltd</strong><br>
-                <a href="https://nextpagetechnologies.com" target="_blank" rel="noopener">https://nextpagetechnologies.com</a>
-            </p>
-        </section>
-    </main>
-</body>
-</html>
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Use Cases</h2>
+                    <ul class="mb-0">
+                        <li>Manufacturing teams that assign work order employees by operation skill.</li>
+                        <li>Corrugation production workflows where operations require trained or expert employees.</li>
+                        <li>Work centers that already use allowed employee categories and need an additional operation-skill filter.</li>
+                        <li>MRP managers who need an override path when no matching skilled employee is available.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Configuration</h2>
+                    <p class="mb-0">
+                        Install the addon with its dependencies, confirm corrugation operation types are available, and assign Operations skills to employees in HR Skills.
+                        The addon keeps employee skill assignment manual; it does not automatically assign skills to employees.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Operations Skill Setup</h2>
+                    <p>
+                        The addon adds the Operations skill type and skill levels used to identify employees who can perform specific corrugation operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="images/description_01.png"
+                        class="img-fluid w-100"
+                        alt="Operations skill setup for employees in Odoo HR Skills"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Work Order Employee Selection</h2>
+                    <p>
+                        In MRP work orders, employee selection is filtered by work center rules first and then by matching Operations skills when an operation is configured.
+                        The picker can also show a manager override option and a hint when no skilled employees are available.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="images/description_02.png"
+                        class="img-fluid w-100"
+                        alt="MRP work order employee selection filtered by Operations skills"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Business Benefits</h2>
+                    <ul class="mb-0">
+                        <li>Helps align work order employee assignment with actual operation skills.</li>
+                        <li>Reduces unrelated employee choices in operation-specific work order selection.</li>
+                        <li>Supports existing work center employee category restrictions.</li>
+                        <li>Gives managers a controlled override option when business conditions require it.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Requirements / Dependencies</h2>
+                    <ul class="mb-0">
+                        <li>Odoo HR Skills</li>
+                        <li>Corrugation MRP Bridge</li>
+                        <li>Workorder Employee Picker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Compatibility</h2>
+                    <ul class="mb-0">
+                        <li>Odoo 18.0</li>
+                        <li>Technical addon name: corr_hr_operations_skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 npt-publisher pt-4">
+                    <h2 class="npt-section-title mb-3">Support / Contact</h2>
+                    <p class="mb-0">
+                        <strong>Next Page Technologies Pvt Ltd</strong><br>
+                        <a href="https://nextpagetechnologies.com" target="_blank" rel="noopener">https://nextpagetechnologies.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container px-0">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img
+                        src="images/contact_us.png"
+                        class="img-fluid w-100"
+                        alt="Contact Next Page Technologies Pvt Ltd for Odoo addon support"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="npt-section-title mb-3">Publisher</h2>
+                    <p class="mb-0">
+                        <strong>Next Page Technologies Pvt Ltd</strong><br>
+                        <a href="https://nextpagetechnologies.com" target="_blank" rel="noopener">https://nextpagetechnologies.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
