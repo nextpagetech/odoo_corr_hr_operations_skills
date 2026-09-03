@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Hide Soft Skills in the employee skill selection popup by filtering on skill type name.
+         The popup will only offer Languages, Operations, and any other non-soft-skill types. -->
+    <record id="employee_skill_view_form_operations" model="ir.ui.view">
+        <field name="name">hr.employee.skill.form.operations</field>
+        <field name="model">hr.employee.skill</field>
+        <field name="inherit_id" ref="hr_skills.employee_skill_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='skill_type_id']" position="attributes">
+                <attribute name="domain">[('name', '!=', 'Soft Skills')]</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

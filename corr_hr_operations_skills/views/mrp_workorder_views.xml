@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Restrict Employee dropdown in MO → Work Orders to Operations-skilled employees. -->
+    <record id="mrp_production_workorder_tree_editable_view_inherit_operations" model="ir.ui.view">
+        <field name="name">mrp.production.work.order.list.operations.skills</field>
+        <field name="model">mrp.workorder</field>
+        <!-- Inherit the view that already injected employee_id into the list -->
+        <field name="inherit_id" ref="workorder_employee_picker.mrp_production_workorder_tree_editable_view_inherit_employee_picker"/>
+        <field name="priority">95</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="domain">[('id', 'in', operation_allowed_employee_ids)]</attribute>
+                <attribute name="context">{'workorder_employee_for_operations': True}</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Operations skill type -->
+        <record id="hr_skill_type_operations" model="hr.skill.type">
+            <field name="name">Operations</field>
+            <field name="active">True</field>
+        </record>
+
+        <!-- Operations skill levels (simplified scale) -->
+        <record id="hr_skill_level_operations_trained" model="hr.skill.level">
+            <field name="name">Trained</field>
+            <field name="level_progress">60</field>
+            <field name="default_level">True</field>
+            <field name="skill_type_id" ref="hr_skill_type_operations"/>
+        </record>
+
+        <record id="hr_skill_level_operations_competent" model="hr.skill.level">
+            <field name="name">Competent</field>
+            <field name="level_progress">80</field>
+            <field name="skill_type_id" ref="hr_skill_type_operations"/>
+        </record>
+
+        <record id="hr_skill_level_operations_expert" model="hr.skill.level">
+            <field name="name">Expert</field>
+            <field name="level_progress">100</field>
+            <field name="skill_type_id" ref="hr_skill_type_operations"/>
+        </record>
+    </data>
+</odoo>
+

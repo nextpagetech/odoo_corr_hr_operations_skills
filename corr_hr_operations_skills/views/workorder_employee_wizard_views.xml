@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_workorder_employee_wizard_form_operations" model="ir.ui.view">
+        <field name="name">workorder.employee.wizard.form.operations</field>
+        <field name="model">workorder.employee.wizard</field>
+        <field name="inherit_id" ref="workorder_employee_picker.view_workorder_employee_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="override_show_all"
+                       groups="hr.group_hr_manager,mrp.group_mrp_manager"/>
+                <field name="no_skilled_employees" invisible="1"/>
+                <span class="o_form_label text-muted"
+                      modifiers="{'invisible': [('no_skilled_employees', '=', False)]}">
+                    No skilled employees found for this operation. Add Operations skill to employees.
+                </span>
+            </xpath>
+        </field>
+    </record>
+</odoo>
