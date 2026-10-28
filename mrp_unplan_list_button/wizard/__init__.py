@@ -1,0 +1,1 @@
+from . import mrp_production_assign_responsible_wizard

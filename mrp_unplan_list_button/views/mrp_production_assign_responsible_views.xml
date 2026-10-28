@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mrp_production_assign_responsible_wizard" model="ir.ui.view">
+        <field name="name">mrp.production.assign.responsible.wizard.form</field>
+        <field name="model">mrp.production.assign.responsible.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Assign Responsible">
+                <group>
+                    <field name="user_id" options="{'no_open': True}"/>
+                </group>
+                <footer>
+                    <button name="action_assign" type="object" string="Assign" class="btn-primary"/>
+                    <button special="cancel" string="Cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Use a new id to avoid clashes with the previous act_window created before this change -->
+    <record id="action_assign_responsible_mrp_production_server" model="ir.actions.server">
+        <field name="name">Assign Responsible</field>
+        <field name="model_id" ref="mrp.model_mrp_production"/>
+        <field name="binding_model_id" ref="mrp.model_mrp_production"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            action = {
+                "type": "ir.actions.act_window",
+                "name": "Assign Responsible",
+                "res_model": "mrp.production.assign.responsible.wizard",
+                "view_mode": "form",
+                "views": [
+                    (env.ref("mrp_unplan_list_button.view_mrp_production_assign_responsible_wizard").id, "form")
+                ],
+                "target": "new",
+                "context": {"active_model": "mrp.production", "active_ids": records.ids, "active_id": records[:1].id if records else False},
+            }
+        </field>
+    </record>
+</odoo>

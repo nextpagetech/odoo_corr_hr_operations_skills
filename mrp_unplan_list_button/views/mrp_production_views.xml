@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_mrp_production_confirm_server" model="ir.actions.server">
+            <field name="name">Confirm</field>
+            <field name="model_id" ref="mrp.model_mrp_production"/>
+            <field name="binding_model_id" ref="mrp.model_mrp_production"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+            if records:
+                records.filtered(lambda mo: mo.state == 'draft').action_confirm()
+            </field>
+        </record>
+
+        <record id="mrp_production_tree_unplan_button" model="ir.ui.view">
+            <field name="name">mrp.production.tree.unplan.button</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list[header/button[@name='button_plan']]/field[1]" position="before">
+                    <field name="is_planned" invisible="1"/>
+                </xpath>
+                <xpath expr="//list/header/button[@name='button_plan']" position="after">
+                    <button name="button_unplan"
+                            type="object"
+                            string="Unplan"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
