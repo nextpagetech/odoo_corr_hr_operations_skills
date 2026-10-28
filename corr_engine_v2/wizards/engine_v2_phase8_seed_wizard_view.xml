@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_engine_phase8_seed_wizard_form" model="ir.ui.view">
+      <field name="name">corr.engine.phase8.seed.wizard.form</field>
+      <field name="model">corr.engine.phase8.seed.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Phase 8 Compatibility Seeding">
+          <group>
+            <group string="Options">
+              <field name="seed_global_defaults"/>
+              <field name="seed_plant_bindings"/>
+              <field name="plant_id"
+                     modifiers='{"invisible": [["seed_plant_bindings","=",false]], "required": [["seed_plant_bindings","=",true]]}'/>
+              <field name="allow_default_updates"/>
+              <field name="dry_run"/>
+            </group>
+          </group>
+          <group string="Log">
+            <field name="log_message" nolabel="1" colspan="4" readonly="1"/>
+          </group>
+          <footer>
+            <button string="Run Seeding"
+                    name="action_run_seed"
+                    type="object"
+                    class="btn-primary"/>
+            <button string="Close"
+                    special="cancel"
+                    class="btn-secondary"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_phase8_seed_wizard" model="ir.actions.act_window">
+      <field name="name">Phase 8 Seeding</field>
+      <field name="res_model">corr.engine.phase8.seed.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_corr_engine_phase8_seed_wizard_form"/>
+      <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_corr_engine_phase8_seed_wizard"
+              name="Phase 8 Seeding"
+              parent="corr_mrp_bridge.menu_corr_bridge_root"
+              action="action_corr_engine_phase8_seed_wizard"
+              sequence="40"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+
+  </data>
+</odoo>
+
+
+
+

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_engine_style_tree" model="ir.ui.view">
+      <field name="name">corr.engine.style.tree</field>
+      <field name="model">corr.engine.style</field>
+      <field name="arch" type="xml">
+        <list string="Engine Styles">
+          <field name="code"/>
+          <field name="name"/>
+          <field name="family"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_style_form" model="ir.ui.view">
+      <field name="name">corr.engine.style.form</field>
+      <field name="model">corr.engine.style</field>
+      <field name="arch" type="xml">
+        <form string="Engine Style">
+          <group>
+            <field name="code"/>
+            <field name="name"/>
+            <field name="family"/>
+            <field name="active"/>
+          </group>
+          <group>
+            <field name="description"/>
+          </group>
+          <notebook>
+            <page string="Parameters">
+              <field name="param_ids">
+                <list editable="bottom" string="Style Parameters">
+                  <field name="sequence"/>
+                  <field name="key"/>
+                  <field name="label"/>
+                  <field name="param_type"/>
+                  <field name="unit"/>
+                  <field name="default_value"/>
+                  <field name="required"/>
+                  <field name="min_value"/>
+                  <field name="max_value"/>
+                  <field name="active"/>
+                </list>
+              </field>
+            </page>
+          </notebook>
+        </form>
+      </field>
+    </record>
+
+    <function model="corr.engine.style" name="seed_default_styles"/>
+
+    <record id="corr_engine_style_0100" model="corr.engine.style">
+      <field name="code">0100</field>
+      <field name="name">Roll Product</field>
+      <field name="family">roll</field>
+      <field name="description">FEFCO 0100 corrugated roll product. Uses Roll Length and Roll Width from main geometry. No extra style parameters required.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_0110" model="corr.engine.style">
+      <field name="code">0110</field>
+      <field name="name">Corrugated Sheet</field>
+      <field name="family">sheet</field>
+      <field name="description">FEFCO 0110 corrugated sheet product. Uses main geometry length and width as sheet size. No extra style parameters required.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_diecut_sheet" model="corr.engine.style">
+      <field name="code">DIECUT_SHEET</field>
+      <field name="name">Custom Diecut Sheet</field>
+      <field name="family">diecut_sheet</field>
+      <field name="description">Manual sheet size with FG-per-sheet yield. Uses selected Engine V2 routing; diecut stage is optional.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_0201" model="corr.engine.style">
+      <field name="code">0201</field>
+      <field name="name">Regular Slotted Container</field>
+      <field name="family">box</field>
+      <field name="description">FEFCO 0201 baseline box style. No extra style parameters required.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_0202" model="corr.engine.style">
+      <field name="code">0202</field>
+      <field name="name">Overlap Slotted Container</field>
+      <field name="family">box</field>
+      <field name="description">FEFCO 0202 overlap slotted container. Requires overlap depth.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_0203" model="corr.engine.style">
+      <field name="code">0203</field>
+      <field name="name">Full Overlap Slotted Container</field>
+      <field name="family">box</field>
+      <field name="description">FEFCO 0203 full overlap slotted container. No extra style parameters required.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste" model="corr.engine.style">
+      <field name="code">MONO_STE</field>
+      <field name="name">Mono Carton - Straight Tuck End</field>
+      <field name="family">mono_carton</field>
+      <field name="description">Mono carton straight tuck end style. Uses glue flap, tuck flap, trim, bleed, and grain direction style parameters.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_0202_param_overlap_mm" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_0202"/>
+      <field name="sequence">10</field>
+      <field name="key">overlap_mm</field>
+      <field name="label">Overlap</field>
+      <field name="param_type">float</field>
+      <field name="unit">mm</field>
+      <field name="default_value">25</field>
+      <field name="required">1</field>
+      <field name="min_value">0.001</field>
+      <field name="help_text">Overlap depth added to each flap side for FEFCO 0202.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_diecut_sheet_param_fg_per_sheet" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_diecut_sheet"/>
+      <field name="sequence">10</field>
+      <field name="key">fg_per_sheet</field>
+      <field name="label">FG per Sheet</field>
+      <field name="param_type">integer</field>
+      <field name="unit">fg/sheet</field>
+      <field name="default_value">1</field>
+      <field name="required">1</field>
+      <field name="min_value">1</field>
+      <field name="help_text">Number of finished-good blanks produced from one manually entered sheet.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_carton_board_gsm" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">5</field>
+      <field name="key">carton_board_gsm</field>
+      <field name="label">Carton Board GSM</field>
+      <field name="param_type">float</field>
+      <field name="unit">gsm</field>
+      <field name="default_value">300</field>
+      <field name="required">1</field>
+      <field name="min_value">1</field>
+      <field name="help_text">GSM of the primary FBB/SBS/duplex carton board.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_carton_board_source_mode" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">6</field>
+      <field name="key">carton_board_source_mode</field>
+      <field name="label">Carton Board Source Mode</field>
+      <field name="param_type">selection</field>
+      <field name="unit"></field>
+      <field name="default_value">auto</field>
+      <field name="required">1</field>
+      <field name="help_text">Auto uses unit-sheet quantity when the selected carton board product UoM is Units; otherwise GSM area weight is used.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_carton_board_ups" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">7</field>
+      <field name="key">carton_board_ups</field>
+      <field name="label">Carton Board UPS</field>
+      <field name="param_type">integer</field>
+      <field name="unit">fg/sheet</field>
+      <field name="default_value">1</field>
+      <field name="required">1</field>
+      <field name="min_value">1</field>
+      <field name="help_text">Number of mono carton blanks produced from one selected carton board sheet when the source is unit based.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_glue_flap_mm" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">10</field>
+      <field name="key">glue_flap_mm</field>
+      <field name="label">Glue Flap</field>
+      <field name="param_type">float</field>
+      <field name="unit">mm</field>
+      <field name="default_value">20</field>
+      <field name="required">1</field>
+      <field name="min_value">0.001</field>
+      <field name="help_text">Side glue flap allowance for the mono carton blank.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_top_tuck_flap_mm" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">20</field>
+      <field name="key">top_tuck_flap_mm</field>
+      <field name="label">Top Tuck Flap</field>
+      <field name="param_type">float</field>
+      <field name="unit">mm</field>
+      <field name="default_value">0</field>
+      <field name="required">0</field>
+      <field name="min_value">0</field>
+      <field name="help_text">Top tuck flap depth. Leave zero to use carton width.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_bottom_tuck_flap_mm" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">30</field>
+      <field name="key">bottom_tuck_flap_mm</field>
+      <field name="label">Bottom Tuck Flap</field>
+      <field name="param_type">float</field>
+      <field name="unit">mm</field>
+      <field name="default_value">0</field>
+      <field name="required">0</field>
+      <field name="min_value">0</field>
+      <field name="help_text">Bottom tuck flap depth. Leave zero to use carton width.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_trim_allowance_mm" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">40</field>
+      <field name="key">trim_allowance_mm</field>
+      <field name="label">Trim Allowance</field>
+      <field name="param_type">float</field>
+      <field name="unit">mm</field>
+      <field name="default_value">0</field>
+      <field name="required">0</field>
+      <field name="min_value">0</field>
+      <field name="help_text">Total trim allowance added to blank length and width.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_bleed_mm" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">50</field>
+      <field name="key">bleed_mm</field>
+      <field name="label">Bleed</field>
+      <field name="param_type">float</field>
+      <field name="unit">mm</field>
+      <field name="default_value">3</field>
+      <field name="required">0</field>
+      <field name="min_value">0</field>
+      <field name="help_text">Print bleed allowance retained as style metadata.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="corr_engine_style_mono_ste_param_grain_direction" model="corr.engine.style.param">
+      <field name="style_id" ref="corr_engine_style_mono_ste"/>
+      <field name="sequence">60</field>
+      <field name="key">grain_direction</field>
+      <field name="label">Grain Direction</field>
+      <field name="param_type">selection</field>
+      <field name="unit"></field>
+      <field name="default_value">height</field>
+      <field name="required">1</field>
+      <field name="help_text">Preferred carton board grain direction for layout/orientation rules.</field>
+      <field name="active">1</field>
+    </record>
+
+    <record id="action_corr_engine_style" model="ir.actions.act_window">
+      <field name="name">Engine Styles</field>
+      <field name="res_model">corr.engine.style</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="corr_menu_engine_style"
+              name="Engine Styles"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_root"
+              action="action_corr_engine_style"
+              sequence="5"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>
+
+
+
+

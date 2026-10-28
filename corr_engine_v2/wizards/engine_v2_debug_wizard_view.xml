@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_engine_v2_debug_wizard" model="ir.ui.view">
+      <field name="name">corr.engine_v2.debug.wizard.form</field>
+      <field name="model">corr.engine_v2.debug.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Engine V2 Debug Tool">
+          <group string="Inputs">
+            <field name="v2_spec_id"/>
+            <field name="spec_id"
+                   string="Legacy Spec"
+                   invisible="v2_spec_id"/>
+            <field name="persistent_multi_piece_enabled" invisible="1"/>
+            <field name="persistent_multi_piece_source" invisible="1"/>
+            <field name="plant_id"/>
+            <field name="order_qty"/>
+            <field name="cost_source"/>
+            <field name="joining_type"/>
+          </group>
+          <group string="Consumables" invisible="1" groups="base.group_system">
+            <field name="use_plant_consumable_defaults"/>
+            <field name="enable_consumables" invisible="use_plant_consumable_defaults"/>
+            <field name="enable_corrugation_adhesive"
+                   invisible="use_plant_consumable_defaults or not enable_consumables"/>
+            <field name="enable_lamination_adhesive"
+                   invisible="use_plant_consumable_defaults or not enable_consumables"/>
+            <field name="enable_printing_ink"
+                   invisible="use_plant_consumable_defaults or not enable_consumables"/>
+            <field name="enable_lamination_film"
+                   invisible="use_plant_consumable_defaults or not enable_consumables"/>
+            <field name="enable_stitching_wire"
+                   invisible="use_plant_consumable_defaults or not enable_consumables"/>
+            <field name="enable_jointing_glue"
+                   invisible="use_plant_consumable_defaults or not enable_consumables"/>
+            <field name="enable_jointing_tape"
+                   invisible="use_plant_consumable_defaults or not enable_consumables"/>
+          </group>
+          <group string="Status" invisible="not preview_warning">
+            <field name="preview_backend_applied" readonly="1" groups="base.group_system"/>
+            <field name="preview_warning" readonly="1" widget="text" nolabel="1"/>
+          </group>
+          <notebook>
+            <page string="Summary">
+              <field name="summary_html" readonly="1" widget="html"/>
+            </page>
+            <page string="RM Breakdown">
+              <field name="rm_breakdown_html" readonly="1" widget="html"/>
+            </page>
+            <page string="Costing Summary">
+              <field name="stage_costing_html" readonly="1" widget="html"/>
+            </page>
+            <page string="Stage Flow">
+              <field name="stage_flow_html" readonly="1" widget="html"/>
+            </page>
+            <page string="Layout Options">
+              <group>
+                <field name="slitting_options_html" readonly="1" widget="html" nolabel="1"/>
+                <field name="selected_slitting_options_json" readonly="1" invisible="1"/>
+              </group>
+              <field name="slitting_option_line_ids" nolabel="1">
+                <list create="0" delete="0" edit="0">
+                  <field name="up_count" string="Slitting UPS"/>
+                  <field name="final_sheet_length_mm" string="Sheet Length (mm)"/>
+                  <field name="final_sheet_width_mm" string="Sheet Width (mm)"/>
+                  <field name="orientation_used" string="Orientation"/>
+                  <field name="is_preferred" string="System Preferred"/>
+                  <field name="is_selected" string="Selected"/>
+                  <button name="action_select_option" type="object" string="Select" class="btn-link"/>
+                </list>
+              </field>
+              <group>
+                <field name="auto_split_suggestions_html" readonly="1" widget="html" nolabel="1"/>
+              </group>
+              <field name="auto_split_suggestion_line_ids" nolabel="1">
+                <list create="0" delete="0" edit="0">
+                  <field name="split_axis" string="Split"/>
+                  <field name="piece_a_size_mm" string="Piece A Size (mm)"/>
+                  <field name="piece_b_size_mm" string="Piece B Size (mm)"/>
+                  <field name="is_selected" string="Accepted"/>
+                  <field name="reason" string="Reason"/>
+                  <button name="action_accept_suggestion"
+                          type="object"
+                          string="Switch &amp; Rerun"
+                          class="btn-link"
+                          invisible="is_selected"/>
+                </list>
+              </field>
+              <group>
+                <button name="action_clear_accepted_split"
+                        type="object"
+                        string="Clear Accepted Split"
+                        class="btn-secondary"
+                        invisible="(not multi_piece_enabled or multi_piece_source != 'accepted_auto_split') and (not persistent_multi_piece_enabled or persistent_multi_piece_source != 'accepted_auto_split')"/>
+              </group>
+            </page>
+            <page string="Piece Layout Planning">
+              <field name="piece_layout_planning_html" readonly="1" widget="html"/>
+            </page>
+            <page string="Shared Upstream Split">
+              <field name="shared_upstream_split_html" readonly="1" widget="html"/>
+            </page>
+            <page string="BOM Preview">
+              <field name="bom_preview_html" readonly="1" widget="html"/>
+            </page>
+            <page string="Warnings">
+              <field name="warnings_text" readonly="1" widget="text"/>
+            </page>
+            <page string="Raw JSON / Trace">
+              <field name="raw_json_tools_html" readonly="1" widget="html" nolabel="1"/>
+              <field name="raw_json_summary_html" readonly="1" widget="html" nolabel="1"/>
+              <field name="raw_json" readonly="1" invisible="1"/>
+            </page>
+          </notebook>
+          <footer>
+            <button name="action_run_debug" type="object" string="Run" class="btn-primary"/>
+            <button name="action_create_bom_from_preview"
+                    type="object"
+                    string="Create BOM from Preview"
+                    class="btn-secondary"
+                    invisible="not preview_is_current or not raw_json"/>
+            <button string="Close" special="cancel" class="btn-link"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_v2_debug_wizard" model="ir.actions.act_window">
+      <field name="name">Engine V2 Debug Tool</field>
+      <field name="res_model">corr.engine_v2.debug.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_corr_engine_v2_debug_wizard"/>
+      <field name="target">new</field>
+    </record>
+
+    <!-- Standalone menu entry under Corrugation (Bridge) -->
+    <menuitem id="corr_menu_engine_v2_debug_tool"
+              name="Engine V2 Debug Tool"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_debug"
+              action="action_corr_engine_v2_debug_wizard"
+              sequence="60"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>
+
+
+
+

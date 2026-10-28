@@ -1,0 +1,43 @@
+{
+  "layout_blanks_per_sheet": 5,
+  "boxes_per_sheet": 5.0,
+  "pieces_per_box": 1,
+  "rm_requirements": [
+    {
+      "product_key": "rm_liner",
+      "role": "liner",
+      "stage_key": "2ply",
+      "layer_no": 1,
+      "qty_per_fg": 0.067932,
+      "qty_uom": "kg"
+    },
+    {
+      "product_key": "rm_medium",
+      "role": "medium",
+      "stage_key": "2ply",
+      "layer_no": 2,
+      "qty_per_fg": 0.045288,
+      "qty_uom": "kg"
+    }
+  ],
+  "stage_graph_stages": [
+    {
+      "key": "2ply",
+      "logical_role": "corrugation",
+      "stage_type": "material",
+      "operations": []
+    },
+    {
+      "key": "board",
+      "logical_role": "conversion",
+      "stage_type": "material",
+      "operations": []
+    },
+    {
+      "key": "fg",
+      "logical_role": "finishing",
+      "stage_type": "material",
+      "operations": []
+    }
+  ]
+}

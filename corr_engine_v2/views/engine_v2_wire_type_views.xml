@@ -1,0 +1,60 @@
+<odoo>
+  <record id="view_corr_engine_v2_wire_type_list" model="ir.ui.view">
+    <field name="name">corr.engine.v2.wire.type.list</field>
+    <field name="model">corr.engine.v2.wire.type</field>
+    <field name="arch" type="xml">
+      <list string="Stitching Wire Types" default_order="sequence,name">
+        <field name="sequence" widget="handle"/>
+        <field name="name"/>
+        <field name="code"/>
+        <field name="product_id"/>
+        <field name="stitches_per_cm"/>
+        <field name="g_per_stitch"/>
+        <field name="company_id" groups="base.group_multi_company"/>
+        <field name="active"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="view_corr_engine_v2_wire_type_form" model="ir.ui.view">
+    <field name="name">corr.engine.v2.wire.type.form</field>
+    <field name="model">corr.engine.v2.wire.type</field>
+    <field name="arch" type="xml">
+      <form string="Stitching Wire Type">
+        <sheet>
+          <group>
+            <group>
+              <field name="name"/>
+              <field name="code"/>
+              <field name="product_id"/>
+              <field name="active"/>
+            </group>
+            <group>
+              <field name="sequence"/>
+              <field name="stitches_per_cm"/>
+              <field name="g_per_stitch"/>
+              <field name="company_id" groups="base.group_multi_company"/>
+            </group>
+          </group>
+          <group>
+            <field name="notes"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_corr_engine_v2_wire_type" model="ir.actions.act_window">
+    <field name="name">Stitching Wire Types</field>
+    <field name="res_model">corr.engine.v2.wire.type</field>
+    <field name="view_mode">list,form</field>
+    <field name="context">{'search_default_active': 1}</field>
+  </record>
+
+  <menuitem id="menu_corr_engine_v2_wire_type"
+            name="Stitching Wire Types"
+            parent="corr_mrp_bridge.menu_mrp_corr_bridge_root"
+            action="action_corr_engine_v2_wire_type"
+            sequence="25"
+            groups="corrugation_formula_engine_v2.group_corr_manager"/>
+</odoo>

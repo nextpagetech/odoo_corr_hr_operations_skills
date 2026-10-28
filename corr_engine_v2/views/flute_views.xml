@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="action_corr_engine_v2_flute" model="ir.actions.act_window">
+      <field name="name">Flutes</field>
+      <field name="res_model">corr.flute</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_corr_engine_v2_flute"
+              name="Flutes"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_root"
+              action="action_corr_engine_v2_flute"
+              sequence="12"
+              groups="base.group_user"/>
+
+    <menuitem id="menu_corr_engine_v2_flute_mrp_config"
+              name="Flutes"
+              parent="mrp.menu_mrp_configuration"
+              action="action_corr_engine_v2_flute"
+              sequence="12"
+              groups="base.group_user"/>
+  </data>
+</odoo>

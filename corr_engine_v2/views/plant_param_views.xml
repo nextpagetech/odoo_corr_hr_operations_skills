@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_plant_param_form_bridge_ext" model="ir.ui.view">
+      <field name="name">corr.plant.param.form.bridge.ext</field>
+      <field name="model">corr.plant.param</field>
+      <field name="inherit_id" ref="corrugation_formula_engine_v2.view_corr_plant_param_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form" position="inside">
+          <group string="Engine V2 Dynamic Architecture">
+            <group>
+              <field name="use_dynamic_stage_architecture"/>
+              <field name="phase8_routing_template_id"/>
+            </group>
+          </group>
+          <group string="Engine V2 Sheet Size">
+            <group>
+              <field name="sheet_length_mm"/>
+              <field name="sheet_width_mm"/>
+            </group>
+          </group>
+          <group string="Engine V2 Constraints / Split Rules">
+            <group>
+              <field name="max_machine_width_mm"/>
+              <field name="split_mode"/>
+              <field name="min_piece_width_mm"/>
+              <field name="max_piece_width_mm"/>
+              <field name="default_sheet_behavior"/>
+            </group>
+          </group>
+          <group string="Engine V2 Consumables">
+            <group>
+              <field name="enable_stitching_wire"/>
+              <field name="wire_stitches_per_cm_default"/>
+              <field name="wire_g_per_stitch_default"/>
+            </group>
+          </group>
+          <group string="Engine V2 Operation Costing">
+            <field name="engine_v2_operation_cost_ids" context="{'default_plant_id': id}" mode="list,form"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_v2_operation_cost_list" model="ir.ui.view">
+      <field name="name">corr.engine.v2.operation.cost.list</field>
+      <field name="model">corr.engine.v2.operation.cost</field>
+      <field name="arch" type="xml">
+        <list editable="bottom" string="Engine V2 Operation Costs">
+          <field name="stage_key"/>
+          <field name="machine_cost_method"/>
+          <field name="machine_rate"/>
+          <field name="labor_cost_method"/>
+          <field name="labor_rate"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+  </data>
+</odoo>
+
+
+
+

@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_engine_v2_spec_tree" model="ir.ui.view">
+      <field name="name">corr.engine.v2.spec.tree</field>
+      <field name="model">corr.engine.v2.spec</field>
+      <field name="arch" type="xml">
+        <list string="Engine V2 Specs">
+          <field name="name"/>
+          <field name="product_tmpl_id"/>
+          <field name="style_id"/>
+          <field name="box_length_mm"/>
+          <field name="box_width_mm"/>
+          <field name="box_height_mm"/>
+          <field name="plant_id"/>
+          <field name="last_preview_status" optional="show"/>
+          <field name="last_preview_generated_at" optional="show"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_v2_spec_form" model="ir.ui.view">
+      <field name="name">corr.engine.v2.spec.form</field>
+      <field name="model">corr.engine.v2.spec</field>
+      <field name="arch" type="xml">
+        <form string="Engine V2 Spec">
+          <header>
+            <button name="action_open_engine_v2_preview"
+                    type="object"
+                    string="Run Engine V2 Preview"
+                    class="btn-primary"/>
+            <button name="action_apply_board_recipe"
+                    type="object"
+                    string="Apply Board Recipe"
+                    class="btn-secondary"/>
+          </header>
+          <sheet>
+            <group string="Spec">
+              <group>
+                <field name="name"/>
+                <field name="product_tmpl_id" domain="[('product_role', 'in', ['finished_good', 'other'])]"/>
+                <field name="style_id"/>
+                <field name="plant_id"/>
+                <field name="has_style_params" invisible="1"/>
+                <field name="is_sheet_style" invisible="1"/>
+                <field name="is_roll_style" invisible="1"/>
+                <field name="is_diecut_sheet_style" invisible="1"/>
+              </group>
+              <group string="Finished Box Size" invisible="is_sheet_style or is_roll_style">
+                <field name="box_length_mm"/>
+                <field name="box_width_mm"/>
+                <field name="box_height_mm"/>
+              </group>
+              <group string="Sheet Size" invisible="not is_sheet_style">
+                <field name="box_length_mm" string="Sheet Length (mm)"/>
+                <field name="box_width_mm" string="Sheet Width (mm)"/>
+              </group>
+              <group string="Roll Size" invisible="not is_roll_style">
+                <field name="roll_length_m" string="Roll Length (m)"/>
+                <field name="box_width_mm" string="Roll Width (mm)"/>
+              </group>
+            </group>
+            <group invisible="not has_style_params and not is_diecut_sheet_style">
+              <div colspan="2" class="d-flex justify-content-between align-items-center border-bottom mb-2">
+                <span class="text-uppercase fw-bold text-success">Style Parameters</span>
+                <button name="action_reload_style_parameters"
+                        type="object"
+                        string="Reset Defaults"
+                        class="btn btn-link p-0"
+                        invisible="not has_style_params and not is_diecut_sheet_style"/>
+              </div>
+              <field name="style_param_value_ids"
+                     nolabel="1"
+                     invisible="not has_style_params">
+                <list string="Style Parameters" editable="bottom" create="false" delete="false">
+                  <field name="sequence" column_invisible="1"/>
+                  <field name="style_id" column_invisible="1"/>
+                  <field name="param_id" column_invisible="1"/>
+                  <field name="key" column_invisible="1"/>
+                  <field name="param_type" column_invisible="1"/>
+                  <field name="label" readonly="1"/>
+                  <field name="display_value"/>
+                  <field name="unit" readonly="1"/>
+                  <field name="required" readonly="1"/>
+                  <field name="help_text" readonly="1"/>
+                </list>
+              </field>
+              <group invisible="not is_diecut_sheet_style">
+                <div class="o_row">
+                  <label for="fg_per_sheet"/>
+                  <field name="fg_per_sheet" class="oe_inline"/>
+                  <span class="text-muted">fg/sheet</span>
+                </div>
+              </group>
+            </group>
+
+            <notebook>
+              <page string="Manufacturing Definition">
+                <group string="Board Structure">
+                  <group>
+                    <field name="board_recipe_id"
+                           help="Reusable default stack. Apply it to copy standard board layers into this spec."/>
+                    <field name="is_board_customized"
+                           readonly="1"
+                           force_save="1"
+                           help="Checked automatically when copied recipe lines are manually edited."/>
+                  </group>
+                  <group>
+                    <button name="action_customize_board_structure"
+                            type="object"
+                            string="Customize Board"
+                            class="btn-secondary"
+                            invisible="is_board_customized or not board_recipe_id"/>
+                  </group>
+                </group>
+                <field name="stack_line_ids">
+                  <list editable="bottom" string="Board Layers" default_order="sequence,id">
+                    <field name="allowed_material_template_ids" column_invisible="1"/>
+                    <field name="allowed_gsm_value_ids" column_invisible="1"/>
+                    <field name="allowed_bf_value_ids" column_invisible="1"/>
+                    <field name="allowed_color_value_ids" column_invisible="1"/>
+                    <field name="sequence" widget="handle"/>
+                    <field name="role" readonly="parent.board_recipe_id and not parent.is_board_customized"/>
+                    <field name="material_template_id" readonly="parent.board_recipe_id and not parent.is_board_customized"/>
+                    <field name="gsm_value_id" string="GSM" context="{'show_attribute': False}" readonly="parent.board_recipe_id and not parent.is_board_customized"/>
+                    <field name="bf_value_id" string="BF" context="{'show_attribute': False}" readonly="parent.board_recipe_id and not parent.is_board_customized"/>
+                    <field name="color_value_id" string="Color" context="{'show_attribute': False}" readonly="parent.board_recipe_id and not parent.is_board_customized"/>
+                    <field name="flute_type_id" readonly="parent.board_recipe_id and not parent.is_board_customized"/>
+                    <field name="resolved_product_id" string="Resolved Variant" readonly="1"/>
+                    <field name="resolution_message" readonly="1" optional="hide"/>
+                    <field name="gsm" optional="hide" readonly="1"/>
+                    <field name="bf" optional="hide" readonly="1"/>
+                    <field name="color" optional="hide" readonly="1"/>
+                    <button name="action_duplicate_layer"
+                            type="object"
+                            icon="fa-copy"
+                            title="Duplicate Layer"
+                            invisible="parent.board_recipe_id and not parent.is_board_customized"/>
+                  </list>
+                </field>
+                <group string="Surface / Printing">
+                  <group>
+                    <div class="o_row">
+                      <field name="surface_profile_id"/>
+                      <button name="action_reload_surface_profile"
+                              type="object"
+                              string="Reload Surface Profile"
+                              class="btn-secondary"
+                              confirm="This will replace the spec-level surface overrides with the selected profile defaults."
+                              invisible="not surface_profile_id"/>
+                    </div>
+                  </group>
+                  <group/>
+                  <group string="Printing">
+                    <field name="surface_printing_required"/>
+                    <field name="surface_print_process"/>
+                    <field name="surface_print_colors"/>
+                    <field name="surface_print_coverage_percent"/>
+                  </group>
+                  <group string="Top Sheet">
+                    <field name="surface_top_sheet_mode"/>
+                    <field name="surface_top_sheet_product_id"/>
+                    <field name="surface_top_sheet_roll_code"
+                           invisible="surface_top_sheet_mode != 'roll'"/>
+                  </group>
+                  <group string="Lamination">
+                    <field name="surface_lamination_required"/>
+                    <field name="surface_lamination_type_id"/>
+                    <field name="surface_lamination_side"/>
+                  </group>
+                  <group/>
+                </group>
+                <group string="Routing">
+                  <group colspan="2">
+                    <field name="joining_type"/>
+                    <field name="stitching_wire_type_id"
+                           invisible="joining_type != 'stitching' and joining_type != 'gluing_stitching'"/>
+                  </group>
+                  <group>
+                    <field name="routing_profile_id"
+                           help="Main Engine V2 route source used for preview and BoM materialization."/>
+                  </group>
+                  <group>
+                    <field name="routing_stage_summary_html" readonly="1" widget="html" nolabel="1"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Preview / Diagnostics">
+                <group string="Preview">
+                  <button name="action_open_engine_v2_preview"
+                          type="object"
+                          string="Run Engine V2 Preview"
+                          class="btn-primary"/>
+                  <field name="product_tmpl_id" readonly="1"/>
+                  <field name="plant_id" readonly="1"/>
+                </group>
+                <group string="Diagnostics">
+                  <field name="sheet_source_mode" readonly="1"/>
+                </group>
+              </page>
+              <page string="Layout Planning">
+                <group string="Persistent Multi-Piece Definition">
+                  <group>
+                    <field name="multi_piece_enabled"/>
+                    <field name="multi_piece_split_stale" invisible="1"/>
+                    <field name="selected_layout_stage_identity" invisible="1"/>
+                    <field name="selected_layout_option_json" invisible="1"/>
+                    <field name="has_full_blank_layout_options" invisible="1"/>
+                    <field name="layout_planning_inputs_ready" invisible="1"/>
+                    <field name="layout_planning_calculated" invisible="1"/>
+                    <field name="split_suggestions_calculated" invisible="1"/>
+                    <field name="has_split_suggestions" invisible="1"/>
+                    <field name="show_split_alternatives" invisible="1"/>
+                    <field name="multi_piece_source" readonly="1" invisible="not multi_piece_enabled"/>
+                    <field name="multi_piece_strategy" invisible="not multi_piece_enabled"/>
+                    <field name="multi_piece_split_axis" invisible="not multi_piece_enabled"/>
+                    <field name="multi_piece_split_mode" invisible="not multi_piece_enabled"/>
+                    <field name="multi_piece_merge_stage_key" invisible="not multi_piece_enabled"/>
+                  </group>
+                  <group>
+                    <field name="multi_piece_source_length_mm" invisible="not multi_piece_enabled"/>
+                    <field name="multi_piece_source_width_mm" invisible="not multi_piece_enabled"/>
+                    <field name="multi_piece_split_after_stage_key"
+                           invisible="not multi_piece_enabled or multi_piece_strategy != 'shared_upstream_split'"/>
+                  </group>
+                </group>
+                <group string="Layout Planning">
+                  <group>
+                    <field name="forced_ups" string="Required Slitting UPS"/>
+                    <button name="action_refresh_layout_planning_options"
+                            type="object"
+                            string="Refresh Layout Options"
+                            class="btn-link"
+                            invisible="not layout_planning_inputs_ready"/>
+                    <button name="action_show_split_alternatives"
+                            type="object"
+                            string="Show Split Options"
+                            class="btn-link"
+                            invisible="not layout_planning_inputs_ready or show_split_alternatives or multi_piece_enabled"/>
+                    <button name="action_clear_accepted_split"
+                            type="object"
+                            string="Clear Accepted Split"
+                            class="btn-link"
+                            invisible="not multi_piece_enabled or multi_piece_source != 'accepted_auto_split'"/>
+                    <button name="action_clear_selected_layout_option"
+                            type="object"
+                            string="Clear Selected Layout"
+                            class="btn-link"
+                            invisible="not selected_layout_option_json"/>
+                  </group>
+                  <group>
+                    <field name="multi_piece_split_warning"
+                           readonly="1"
+                           invisible="not multi_piece_split_stale"/>
+                    <field name="layout_planning_hint" readonly="1" nolabel="1"/>
+                  </group>
+                </group>
+                <group string="Full Blank Layout Options"
+                       invisible="not layout_planning_calculated or not has_full_blank_layout_options">
+                  <field name="full_blank_layout_option_ids" nolabel="1">
+                    <list string="Full Blank Layout Options" create="false" delete="false" edit="false">
+                      <field name="up_count" string="Slitting UPS"/>
+                      <field name="sheet_length_mm" string="Sheet Length"/>
+                      <field name="sheet_width_mm" string="Sheet Width"/>
+                      <field name="orientation"/>
+                      <field name="is_preferred" string="System Preferred"/>
+                      <field name="is_selected" string="Selected"/>
+                      <field name="is_current" invisible="1"/>
+                      <field name="action_state" string="Current" readonly="1" invisible="not is_current"/>
+                      <field name="status"/>
+                      <field name="reason"/>
+                      <button name="action_apply_to_spec"
+                              type="object"
+                              string="Apply"
+                              class="btn-link"
+                              invisible="is_current"/>
+                    </list>
+                  </field>
+                </group>
+                <group string="Split / Multi-Piece Alternatives"
+                       invisible="not split_suggestions_calculated or (not multi_piece_enabled and has_full_blank_layout_options and not show_split_alternatives)">
+                  <group>
+                    <field name="multi_piece_split_suggestion_message" readonly="1" nolabel="1"/>
+                  </group>
+                </group>
+                <field name="multi_piece_split_suggestion_ids"
+                       invisible="not split_suggestions_calculated or not has_split_suggestions or (not multi_piece_enabled and has_full_blank_layout_options and not show_split_alternatives)">
+                  <list string="Suggested Split Layouts" create="false" delete="false" edit="false">
+                    <field name="split_axis"/>
+                    <field name="split_mode"/>
+                    <field name="piece_a_length_mm"/>
+                    <field name="piece_a_width_mm"/>
+                    <field name="piece_b_length_mm"/>
+                    <field name="piece_b_width_mm"/>
+                    <field name="status"/>
+                    <field name="reason"/>
+                    <field name="spec_multi_piece_enabled" invisible="1"/>
+                    <field name="is_applied" invisible="1"/>
+                    <field name="spec_split_stale" invisible="1"/>
+                    <field name="spec_has_accepted_split" invisible="1"/>
+                    <field name="action_state"
+                           string="Action"
+                           readonly="1"
+                           invisible="not is_applied"/>
+                    <button name="action_apply_to_spec"
+                            type="object"
+                            string="Apply &amp; Enable Multi-Piece"
+                            class="btn-link"
+                            invisible="spec_multi_piece_enabled or is_applied or (spec_split_stale and spec_has_accepted_split)"/>
+                    <button name="action_apply_to_spec"
+                            type="object"
+                            string="Reapply Split"
+                            class="btn-link"
+                            invisible="not (spec_split_stale and spec_has_accepted_split)"/>
+                    <button name="action_apply_to_spec"
+                            type="object"
+                            string="Apply Split"
+                            class="btn-link"
+                            invisible="not spec_multi_piece_enabled or is_applied or (spec_split_stale and spec_has_accepted_split)"/>
+                  </list>
+                </field>
+                <field name="multi_piece_line_ids"
+                       invisible="not multi_piece_enabled"
+                       context="{'form_view_ref': 'corr_engine_v2.view_corr_engine_v2_spec_piece_popup_form'}">
+                  <list string="Piece Lines" default_order="sequence,id">
+                    <field name="sequence" widget="handle"/>
+                    <field name="piece_code"/>
+                    <field name="piece_name"/>
+                    <field name="piece_length_mm"/>
+                    <field name="piece_width_mm"/>
+                    <field name="piece_qty_per_fg"/>
+                    <field name="planning_status"/>
+                    <field name="stack_source"/>
+                    <field name="surface_source"/>
+                    <field name="top_sheet_source"/>
+                    <button name="action_open_piece_popup"
+                            type="object"
+                            string="View"
+                            class="btn-link"/>
+                  </list>
+                </field>
+              </page>
+              <page string="Advanced">
+                <group string="Layout Policy">
+                  <field name="layout_policy_id"/>
+                </group>
+                <group string="Preview Snapshot">
+                  <group>
+                    <field name="last_preview_status" readonly="1"/>
+                    <field name="last_preview_generated_at" readonly="1"/>
+                  </group>
+                  <group>
+                    <field name="last_preview_error" readonly="1" placeholder="No preview error recorded."/>
+                  </group>
+                  <field name="last_preview_raw_json"
+                         readonly="1"
+                         nolabel="1"
+                         widget="text"
+                         placeholder="No preview payload recorded yet."/>
+                </group>
+                <group string="Manual Sheet Size">
+                  <field name="sheet_source_mode" readonly="1"/>
+                  <field name="manual_sheet_length_mm"/>
+                  <field name="manual_sheet_width_mm"/>
+                </group>
+                <group string="Consumables" invisible="1" groups="base.group_system">
+                  <field name="use_plant_consumable_defaults"/>
+                  <field name="enable_consumables"
+                         invisible="use_plant_consumable_defaults"/>
+                  <field name="enable_corrugation_adhesive"
+                         invisible="use_plant_consumable_defaults or not enable_consumables"/>
+                  <field name="enable_lamination_adhesive"
+                         invisible="use_plant_consumable_defaults or not enable_consumables"/>
+                  <field name="enable_printing_ink"
+                         invisible="use_plant_consumable_defaults or not enable_consumables"/>
+                  <field name="enable_lamination_film"
+                         invisible="use_plant_consumable_defaults or not enable_consumables"/>
+                  <field name="enable_stitching_wire"
+                         invisible="use_plant_consumable_defaults or not enable_consumables"/>
+                  <field name="enable_jointing_glue"
+                         invisible="use_plant_consumable_defaults or not enable_consumables"/>
+                  <field name="enable_jointing_tape"
+                         invisible="use_plant_consumable_defaults or not enable_consumables"/>
+                </group>
+                <group string="UPS Overrides">
+                  <field name="ups_enforcement"/>
+                </group>
+                <group string="Geometry Overrides">
+                  <field name="glue_flap_override_mm"/>
+                </group>
+                <group string="Layout Planning Diagnostics" invisible="not layout_planning_calculated">
+                  <field name="layout_planning_diagnostics_html"
+                         readonly="1"
+                         widget="html"
+                         nolabel="1"/>
+                </group>
+                <group string="Technical Routing Fallback">
+                  <field name="phase8_routing_template_id"
+                         help="Fallback/technical only. Use Routing Profile as the main Engine V2 route source."/>
+                </group>
+                <group string="Technical Style Parameters" groups="base.group_system">
+                  <field name="style_param_value_ids" nolabel="1" readonly="1">
+                    <list string="Style Parameters" create="false" delete="false" edit="false">
+                      <field name="style_id" column_invisible="1"/>
+                      <field name="param_id"/>
+                      <field name="label"/>
+                      <field name="key"/>
+                      <field name="param_type"/>
+                      <field name="value_float"/>
+                      <field name="value_int"/>
+                      <field name="value_bool"/>
+                      <field name="value_char"/>
+                      <field name="value_selection"/>
+                      <field name="unit"/>
+                      <field name="required"/>
+                      <field name="min_value"/>
+                      <field name="max_value"/>
+                    </list>
+                  </field>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_v2_spec_piece_popup_form" model="ir.ui.view">
+      <field name="name">corr.engine.v2.spec.piece.popup.form</field>
+      <field name="model">corr.engine.v2.spec.piece</field>
+      <field name="arch" type="xml">
+        <form string="Piece Manufacturing Definition" create="false" edit="true">
+          <sheet>
+            <group string="Piece">
+              <group>
+                <field name="sequence"/>
+                <field name="piece_code"/>
+                <field name="piece_name"/>
+              </group>
+              <group>
+                <field name="piece_length_mm"/>
+                <field name="piece_width_mm"/>
+                <field name="piece_qty_per_fg"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Stack">
+                <group>
+                  <field name="stack_source"/>
+                  <field name="board_recipe_id" invisible="stack_source == 'inherited'"/>
+                  <field name="recipe_signature" readonly="1"/>
+                </group>
+                <group string="Effective Stack" invisible="stack_source != 'inherited'">
+                  <field name="effective_stack_summary" readonly="1" nolabel="1"/>
+                </group>
+                <field name="piece_stack_line_ids" invisible="stack_source == 'inherited'">
+                  <list editable="bottom" string="Custom Piece Stack" default_order="sequence,id">
+                    <field name="sequence" widget="handle"/>
+                    <field name="role"/>
+                    <field name="gsm"/>
+                    <field name="bf"/>
+                    <field name="color"/>
+                    <field name="flute_type_id"/>
+                    <field name="material_product_id"/>
+                    <field name="source_type"/>
+                    <button name="action_duplicate_layer"
+                            type="object"
+                            icon="fa-copy"
+                            title="Duplicate Layer"/>
+                  </list>
+                </field>
+              </page>
+              <page string="Surface / Top Sheet">
+                <group string="Surface">
+                  <field name="surface_source"/>
+                  <field name="effective_surface_summary" readonly="1" invisible="surface_source != 'inherited'"/>
+                  <field name="surface_profile_id" invisible="surface_source == 'inherited'"/>
+                </group>
+                <group string="Top Sheet">
+                  <field name="top_sheet_source"/>
+                  <field name="effective_top_sheet_summary" readonly="1" invisible="top_sheet_source != 'inherited'"/>
+                  <field name="top_sheet_mode" invisible="top_sheet_source == 'inherited'"/>
+                  <field name="top_sheet_product_id" invisible="top_sheet_source == 'inherited'"/>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_v2_spec" model="ir.actions.act_window">
+      <field name="name">Engine V2 Specs</field>
+      <field name="res_model">corr.engine.v2.spec</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="corr_menu_engine_v2_spec"
+              name="Engine V2 Specs"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_root"
+              action="action_corr_engine_v2_spec"
+              sequence="10"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>
+
+
+
+

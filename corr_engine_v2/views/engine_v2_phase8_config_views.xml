@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- Engine Stage Templates -->
+    <record id="view_corr_engine_stage_template_list" model="ir.ui.view">
+      <field name="name">corr.engine.stage.template.list</field>
+      <field name="model">corr.engine.stage.template</field>
+      <field name="arch" type="xml">
+        <list string="Engine Stage Templates">
+          <field name="code"/>
+          <field name="name"/>
+          <field name="stage_type_id"/>
+          <field name="sequence"/>
+          <field name="consider_slitting_options"/>
+          <field name="drives_layout_selection"/>
+          <field name="is_entry_stage"/>
+          <field name="is_fg_stage"/>
+          <field name="is_optional"/>
+          <field name="advanced_overrides" groups="base.group_system" optional="hide"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_stage_template_form" model="ir.ui.view">
+      <field name="name">corr.engine.stage.template.form</field>
+      <field name="model">corr.engine.stage.template</field>
+      <field name="arch" type="xml">
+        <form string="Engine Stage Template">
+          <header>
+            <button name="action_seed_contract_defaults"
+                    type="object"
+                    string="Apply Contract Defaults"
+                    class="oe_highlight"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="code" readonly="id"/>
+              <field name="name"/>
+              <field name="stage_type_id"/>
+              <field name="sequence"/>
+              <field name="active"/>
+            </group>
+            <group string="Advanced / Technical" groups="base.group_system">
+              <field name="advanced_overrides"/>
+              <field name="stage_type" readonly="1"/>
+              <field name="capability_id" readonly="1"/>
+              <field name="execution_type"/>
+              <field name="output_kind"/>
+              <field name="output_stock_behavior"/>
+              <field name="bom_mapping_policy"/>
+              <field name="quantity_profile_id"/>
+              <field name="default_quantity_basis"/>
+              <field name="default_cost_basis"/>
+            </group>
+            <group string="Behaviour">
+              <field name="consumes_previous_output"/>
+              <field name="previous_output_required"/>
+              <field name="consider_slitting_options"/>
+              <field name="drives_layout_selection"/>
+              <field name="is_entry_stage"/>
+              <field name="is_fg_stage"/>
+              <field name="is_optional"/>
+              <field name="merge_group_key"/>
+            </group>
+            <notebook>
+              <page string="Advanced Contract" groups="base.group_system">
+                <group string="Flow Behaviour">
+                  <field name="can_be_terminal"/>
+                </group>
+                <group string="Allowed Inputs">
+                  <field name="input_rule_ids" nolabel="1">
+                    <list editable="bottom">
+                      <field name="sequence" widget="handle"/>
+                      <field name="role_id"/>
+                      <field name="requirement"/>
+                      <field name="source"/>
+                      <field name="priority"/>
+                      <field name="note"/>
+                    </list>
+                  </field>
+                </group>
+              </page>
+              <page string="I/O Definitions" groups="base.group_system">
+                <field name="io_template_ids" nolabel="1">
+                  <list editable="bottom">
+                    <field name="input_quantity_node_key"/>
+                    <field name="output_quantity_node_key"/>
+                    <field name="yield_factor"/>
+                    <field name="loss_type"/>
+                    <field name="active"/>
+                  </list>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_stage_template" model="ir.actions.act_window">
+      <field name="name">Engine Stage Templates</field>
+      <field name="res_model">corr.engine.stage.template</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_stage_template_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_stage_template"
+              name="Engine Stage Templates"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_stage_template"
+              sequence="15"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+
+    <!-- Engine Stage Capabilities -->
+    <record id="view_corr_engine_stage_capability_list" model="ir.ui.view">
+      <field name="name">corr.engine.stage.capability.list</field>
+      <field name="model">corr.engine.stage.capability</field>
+      <field name="arch" type="xml">
+        <list string="Engine Stage Capabilities">
+          <header>
+            <button name="action_seed_default_capabilities"
+                    type="object"
+                    string="Seed Default Capabilities"
+                    class="oe_highlight"/>
+          </header>
+          <field name="code"/>
+          <field name="name"/>
+          <field name="execution_type"/>
+          <field name="default_output_kind"/>
+          <field name="default_output_stock_behavior"/>
+          <field name="default_bom_mapping_policy"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_stage_capability_form" model="ir.ui.view">
+      <field name="name">corr.engine.stage.capability.form</field>
+      <field name="model">corr.engine.stage.capability</field>
+      <field name="arch" type="xml">
+        <form string="Engine Stage Capability">
+          <header>
+            <button name="action_seed_default_capabilities"
+                    type="object"
+                    string="Seed Default Capabilities"
+                    class="oe_highlight"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="code"/>
+              <field name="name"/>
+              <field name="execution_type"/>
+              <field name="active"/>
+            </group>
+            <group string="Defaults">
+              <field name="default_output_kind"/>
+              <field name="default_output_stock_behavior"/>
+              <field name="default_bom_mapping_policy"/>
+              <field name="default_quantity_profile_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_stage_capability" model="ir.actions.act_window">
+      <field name="name">Engine Stage Capabilities</field>
+      <field name="res_model">corr.engine.stage.capability</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_stage_capability_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_stage_capability"
+              name="Engine Stage Capabilities"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_stage_capability"
+              sequence="14"
+              groups="base.group_system"/>
+
+    <record id="view_corr_stage_type_list_engine_v2" model="ir.ui.view">
+      <field name="name">corr.stage.type.list.engine.v2</field>
+      <field name="model">corr.stage.type</field>
+      <field name="inherit_id" ref="corr_mrp_bridge.view_corr_stage_type_list"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='default_operation_type_id']" position="after">
+          <field name="capability_id" groups="base.group_system" optional="hide"/>
+          <field name="default_stage_type" optional="hide"/>
+          <field name="default_execution_type" optional="hide"/>
+          <field name="default_output_kind" optional="hide"/>
+          <field name="default_output_stock_behavior" optional="hide"/>
+          <field name="default_bom_mapping_policy" optional="hide"/>
+          <field name="default_quantity_profile_id" optional="hide"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_corr_stage_type_form_engine_v2" model="ir.ui.view">
+      <field name="name">corr.stage.type.form.engine.v2</field>
+      <field name="model">corr.stage.type</field>
+      <field name="inherit_id" ref="corr_mrp_bridge.view_corr_stage_type_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='default_operation_type_id']" position="after">
+          <field name="capability_id" groups="base.group_system"/>
+          <field name="default_stage_type"/>
+          <field name="default_execution_type"/>
+          <field name="default_output_kind"/>
+          <field name="default_output_stock_behavior"/>
+          <field name="default_bom_mapping_policy"/>
+          <field name="default_quantity_profile_id"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_routing_profile_form_engine_v2_stage_template" model="ir.ui.view">
+      <field name="name">corr.engine.routing.profile.form.engine.v2.stage.template</field>
+      <field name="model">corr.engine.routing.profile</field>
+      <field name="inherit_id" ref="corr_mrp_bridge.view_corr_engine_routing_profile_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='stage_ids']/list/field[@name='stage_code']" position="replace">
+          <field name="stage_template_id" string="Stage Template"/>
+          <field name="stage_code" string="Technical Stage Code" groups="base.group_system" readonly="1" optional="hide"/>
+        </xpath>
+        <xpath expr="//field[@name='stage_ids']/list/field[@name='stage_type']" position="attributes">
+          <attribute name="string">Routing Line Type</attribute>
+          <attribute name="readonly">1</attribute>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Engine Input Roles -->
+    <record id="view_corr_engine_input_role_list" model="ir.ui.view">
+      <field name="name">corr.engine.input.role.list</field>
+      <field name="model">corr.engine.input.role</field>
+      <field name="arch" type="xml">
+        <list string="Engine Input Roles">
+          <field name="code"/>
+          <field name="name"/>
+          <field name="category"/>
+          <field name="shape"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_input_role_form" model="ir.ui.view">
+      <field name="name">corr.engine.input.role.form</field>
+      <field name="model">corr.engine.input.role</field>
+      <field name="arch" type="xml">
+        <form string="Engine Input Role">
+          <header>
+            <button name="action_seed_default_input_roles"
+                    type="object"
+                    string="Seed Default Input Roles"
+                    class="oe_highlight"/>
+          </header>
+          <sheet>
+            <group>
+              <field name="code"/>
+              <field name="name"/>
+              <field name="category"/>
+              <field name="shape"/>
+              <field name="active"/>
+            </group>
+            <group>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_input_role" model="ir.actions.act_window">
+      <field name="name">Engine Input Roles</field>
+      <field name="res_model">corr.engine.input.role</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_input_role_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_input_role"
+              name="Engine Input Roles"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_input_role"
+              sequence="13"
+              groups="base.group_system"/>
+
+    <!-- Engine Quantity Profiles -->
+    <record id="view_corr_engine_quantity_profile_list" model="ir.ui.view">
+      <field name="name">corr.engine.quantity.profile.list</field>
+      <field name="model">corr.engine.quantity.profile</field>
+      <field name="arch" type="xml">
+        <list string="Engine Quantity Profiles">
+          <field name="code"/>
+          <field name="name"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_quantity_profile_form" model="ir.ui.view">
+      <field name="name">corr.engine.quantity.profile.form</field>
+      <field name="model">corr.engine.quantity.profile</field>
+      <field name="arch" type="xml">
+        <form string="Engine Quantity Profile">
+          <sheet>
+            <group>
+              <field name="code"/>
+              <field name="name"/>
+              <field name="active"/>
+            </group>
+            <group>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_quantity_profile" model="ir.actions.act_window">
+      <field name="name">Engine Quantity Profiles</field>
+      <field name="res_model">corr.engine.quantity.profile</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_quantity_profile_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_quantity_profile"
+              name="Engine Quantity Profiles"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_quantity_profile"
+              sequence="12"
+              groups="base.group_system"/>
+
+    <!-- Engine V2 Contract Seeding / Normalisation Wizard -->
+    <record id="view_corr_engine_v2_contract_seed_wizard_form" model="ir.ui.view">
+      <field name="name">corr.engine.v2.contract.seed.wizard.form</field>
+      <field name="model">corr.engine.v2.contract.seed.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Engine V2 Contract Seeding">
+          <sheet>
+            <group string="Actions">
+              <field name="seed_capabilities"/>
+              <field name="seed_input_roles"/>
+              <field name="normalise_stage_templates"/>
+            </group>
+            <footer>
+              <button string="Run"
+                      name="action_run"
+                      type="object"
+                      class="btn-primary"/>
+              <button string="Cancel" special="cancel" class="btn-secondary"/>
+            </footer>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_v2_contract_seed_wizard" model="ir.actions.act_window">
+      <field name="name">Engine V2 Contract Seeding</field>
+      <field name="res_model">corr.engine.v2.contract.seed.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_corr_engine_v2_contract_seed_wizard_form"/>
+      <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_corr_engine_v2_contract_seed_wizard"
+              name="Engine V2 Contract Seeding"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_v2_contract_seed_wizard"
+              sequence="11"
+              groups="base.group_system"/>
+
+    <!-- Engine Routing Templates -->
+    <record id="view_corr_engine_routing_template_list" model="ir.ui.view">
+      <field name="name">corr.engine.routing.template.list</field>
+      <field name="model">corr.engine.routing.template</field>
+      <field name="arch" type="xml">
+        <list string="Engine Routing Templates">
+          <field name="name"/>
+          <field name="code"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_routing_template_form" model="ir.ui.view">
+      <field name="name">corr.engine.routing.template.form</field>
+      <field name="model">corr.engine.routing.template</field>
+      <field name="arch" type="xml">
+        <form string="Engine Routing Template">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="code"/>
+              <field name="active"/>
+            </group>
+            <notebook>
+              <page string="Stages">
+                <field name="stage_ids" nolabel="1">
+                  <list editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="stage_template_id"/>
+                    <field name="is_optional"/>
+                    <field name="note"/>
+                  </list>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_routing_template" model="ir.actions.act_window">
+      <field name="name">Engine Routing Templates</field>
+      <field name="res_model">corr.engine.routing.template</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_routing_template_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_routing_template"
+              name="Engine Routing Templates"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_routing_template"
+              sequence="16"
+              groups="base.group_system"/>
+
+    <!-- Engine Plant Stage Bindings -->
+    <record id="view_corr_engine_plant_stage_binding_list" model="ir.ui.view">
+      <field name="name">corr.engine.plant.stage.binding.list</field>
+      <field name="model">corr.engine.plant.stage.binding</field>
+      <field name="arch" type="xml">
+        <list string="Engine Plant Stage Bindings">
+          <field name="plant_id"/>
+          <field name="stage_template_id"/>
+          <field name="workcenter_id"/>
+          <field name="routing_workcenter_id"/>
+          <field name="merge_with_stage_template_id"/>
+          <field name="sequence"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_plant_stage_binding_form" model="ir.ui.view">
+      <field name="name">corr.engine.plant.stage.binding.form</field>
+      <field name="model">corr.engine.plant.stage.binding</field>
+      <field name="arch" type="xml">
+        <form string="Engine Plant Stage Binding">
+          <sheet>
+            <group>
+              <field name="plant_id"/>
+              <field name="stage_template_id"/>
+              <field name="sequence"/>
+              <field name="active"/>
+            </group>
+            <group>
+              <field name="workcenter_id"/>
+              <field name="routing_workcenter_id"/>
+              <field name="merge_with_stage_template_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_plant_stage_binding" model="ir.actions.act_window">
+      <field name="name">Engine Plant Stage Bindings</field>
+      <field name="res_model">corr.engine.plant.stage.binding</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_plant_stage_binding_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_plant_stage_binding"
+              name="Engine Plant Stage Bindings"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_plant_stage_binding"
+              sequence="17"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+
+    <!-- Engine Material Profiles -->
+    <record id="view_corr_engine_material_profile_list" model="ir.ui.view">
+      <field name="name">corr.engine.material.profile.list</field>
+      <field name="model">corr.engine.material.profile</field>
+      <field name="arch" type="xml">
+        <list string="Engine Material Profiles">
+          <field name="product_tmpl_id"/>
+          <field name="material_type"/>
+          <field name="role"/>
+          <field name="default_bucket"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_material_profile_form" model="ir.ui.view">
+      <field name="name">corr.engine.material.profile.form</field>
+      <field name="model">corr.engine.material.profile</field>
+      <field name="arch" type="xml">
+        <form string="Engine Material Profile">
+          <sheet>
+            <group>
+              <field name="product_tmpl_id"/>
+              <field name="material_type"/>
+              <field name="role"/>
+              <field name="default_bucket"/>
+              <field name="active"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_material_profile" model="ir.actions.act_window">
+      <field name="name">Engine Material Profiles</field>
+      <field name="res_model">corr.engine.material.profile</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_material_profile_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_material_profile"
+              name="Engine Material Profiles"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_material_profile"
+              sequence="18"
+              groups="base.group_system"/>
+
+    <!-- Engine Material Attachment Rules -->
+    <record id="view_corr_engine_material_attachment_rule_list" model="ir.ui.view">
+      <field name="name">corr.engine.material.attachment.rule.list</field>
+      <field name="model">corr.engine.material.attachment.rule</field>
+      <field name="arch" type="xml">
+        <list string="Engine Material Attachment Rules">
+          <field name="name"/>
+          <field name="plant_id"/>
+          <field name="material_profile_id"/>
+          <field name="stage_type"/>
+          <field name="attach_quantity_basis"/>
+          <field name="is_mandatory"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_material_attachment_rule_form" model="ir.ui.view">
+      <field name="name">corr.engine.material.attachment.rule.form</field>
+      <field name="model">corr.engine.material.attachment.rule</field>
+      <field name="arch" type="xml">
+        <form string="Engine Material Attachment Rule">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="sequence"/>
+              <field name="plant_id"/>
+              <field name="material_profile_id"/>
+              <field name="active"/>
+            </group>
+            <group string="Stage Filters">
+              <field name="stage_template_ids" widget="many2many_tags"/>
+              <field name="stage_type"/>
+            </group>
+            <group string="Attach Behaviour">
+              <field name="attach_quantity_basis"/>
+              <field name="is_mandatory"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_material_attachment_rule" model="ir.actions.act_window">
+      <field name="name">Engine Material Attachment Rules</field>
+      <field name="res_model">corr.engine.material.attachment.rule</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_material_attachment_rule_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_material_attachment_rule"
+              name="Engine Material Attachment Rules"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_material_attachment_rule"
+              sequence="19"
+              groups="base.group_system"/>
+
+    <!-- Engine BoM Translation Rules -->
+    <record id="view_corr_engine_bom_translation_rule_list" model="ir.ui.view">
+      <field name="name">corr.engine.bom.translation.rule.list</field>
+      <field name="model">corr.engine.bom.translation.rule</field>
+      <field name="arch" type="xml">
+        <list string="Engine BoM Translation Rules">
+          <field name="name"/>
+          <field name="plant_id"/>
+          <field name="operation_behavior"/>
+          <field name="operation_ref_type"/>
+          <field name="component_behavior"/>
+          <field name="bucket_mapping"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_bom_translation_rule_form" model="ir.ui.view">
+      <field name="name">corr.engine.bom.translation.rule.form</field>
+      <field name="model">corr.engine.bom.translation.rule</field>
+      <field name="arch" type="xml">
+        <form string="Engine BoM Translation Rule">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="sequence"/>
+              <field name="plant_id"/>
+              <field name="active"/>
+            </group>
+            <group string="Stages">
+              <field name="stage_template_ids" widget="many2many_tags"/>
+            </group>
+            <group string="Operation Behaviour">
+              <field name="operation_behavior"/>
+              <field name="operation_ref_type"/>
+              <field name="workcenter_id"/>
+              <field name="routing_workcenter_id"/>
+            </group>
+            <group string="Component Behaviour">
+              <field name="component_behavior"/>
+              <field name="bucket_mapping"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_bom_translation_rule" model="ir.actions.act_window">
+      <field name="name">Engine BoM Translation Rules</field>
+      <field name="res_model">corr.engine.bom.translation.rule</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_engine_bom_translation_rule_list"/>
+    </record>
+
+    <menuitem id="menu_corr_engine_bom_translation_rule"
+              name="Engine BoM Translation Rules"
+              parent="corr_mrp_bridge.menu_mrp_corr_bridge_engine_admin"
+              action="action_corr_engine_bom_translation_rule"
+              sequence="20"
+              groups="base.group_system"/>
+
+  </data>
+</odoo>
+
+
+
+
