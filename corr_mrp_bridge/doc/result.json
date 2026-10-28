@@ -1,0 +1,4552 @@
+{
+  "bom_struct": {
+    "components": [
+      {
+        "metadata": {
+          "consumption_type": "area",
+          "gsm": 180.0,
+          "layer_no": 1,
+          "resolution": {
+            "candidate_ids": [
+              2867,
+              39,
+              40,
+              1389
+            ],
+            "product_id": 2867,
+            "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+            "status": "exact",
+            "uom_id": 12,
+            "uom_name": "kg"
+          },
+          "resolution_product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+          "resolution_status": "exact",
+          "role": "liner",
+          "type": "liner"
+        },
+        "product": "rm_liner",
+        "qty": 0.34271999999999997,
+        "stage": "corrugator",
+        "uom": "kg"
+      },
+      {
+        "metadata": {
+          "consumption_type": "area",
+          "gsm": 150.0,
+          "layer_no": 2,
+          "resolution": {
+            "candidate_ids": [
+              2868,
+              79,
+              80,
+              1401
+            ],
+            "product_id": 2868,
+            "product_name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+            "status": "exact",
+            "uom_id": 12,
+            "uom_name": "kg"
+          },
+          "resolution_product_name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+          "resolution_status": "exact",
+          "role": "medium",
+          "type": "medium"
+        },
+        "product": "rm_medium",
+        "qty": 0.28559999999999997,
+        "stage": "corrugator",
+        "uom": "kg"
+      },
+      {
+        "metadata": {
+          "consumption_type": "area",
+          "gsm": 180.0,
+          "layer_no": 3,
+          "resolution": {
+            "candidate_ids": [
+              2867,
+              39,
+              40,
+              1389
+            ],
+            "product_id": 2867,
+            "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+            "status": "exact",
+            "uom_id": 12,
+            "uom_name": "kg"
+          },
+          "resolution_product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+          "resolution_status": "exact",
+          "role": "liner",
+          "type": "liner"
+        },
+        "product": "rm_liner",
+        "qty": 0.34271999999999997,
+        "stage": "corrugator",
+        "uom": "kg"
+      },
+      {
+        "metadata": {
+          "consumption_type": "area",
+          "factor_kg_per_m2": 0.5,
+          "kind": "adhesive_corrugation"
+        },
+        "product": "rm_adhesive_corrugation",
+        "qty": 0.952,
+        "stage": "corrugator",
+        "uom": "kg"
+      },
+      {
+        "metadata": {
+          "consumption_type": "area",
+          "factor_kg_per_m2": 0.2,
+          "kind": "adhesive_board"
+        },
+        "product": "rm_adhesive_board",
+        "qty": 0.3808,
+        "stage": "corrugator",
+        "uom": "kg"
+      },
+      {
+        "metadata": {
+          "consumption_type": "area",
+          "factor_kg_per_m2": 0.05,
+          "kind": "adhesive_fg"
+        },
+        "product": "rm_adhesive_fg",
+        "qty": 0.0952,
+        "stage": "finished_goods",
+        "uom": "kg"
+      }
+    ],
+    "operations": [
+      {
+        "input_qty": 2.3990400000000003,
+        "output_qty": 1.0,
+        "stage": "corrugator"
+      },
+      {
+        "input_qty": 1.0,
+        "output_qty": 1.0,
+        "stage": "printing"
+      },
+      {
+        "input_qty": 1.0,
+        "output_qty": 1.0,
+        "stage": "diecut"
+      }
+    ],
+    "product_qty": 1.0
+  },
+  "costing": {
+    "components": [
+      {
+        "converted_unit_cost": 25.0,
+        "cost_for_order": 8.568,
+        "cost_per_fg": 8.568,
+        "effective_cost_source": "standard_price",
+        "engine_role": "liner",
+        "fallback_reason": "",
+        "layer_no": 1,
+        "product_id": 2867,
+        "product_key": "rm_liner",
+        "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+        "product_uom_id": 12,
+        "qty_for_order": 0.34271999999999997,
+        "qty_per_fg": 0.34271999999999997,
+        "raw_last_purchase_price": 0.0,
+        "raw_standard_price": 25.0,
+        "requested_cost_source": "standard_price",
+        "role": "liner",
+        "stage_key": "2ply",
+        "target_uom_id": 12,
+        "unit_cost": 25.0,
+        "uom_id": 12,
+        "uom_name": "kg"
+      },
+      {
+        "converted_unit_cost": 22.0,
+        "cost_for_order": 6.283199999999999,
+        "cost_per_fg": 6.283199999999999,
+        "effective_cost_source": "standard_price",
+        "engine_role": "medium",
+        "fallback_reason": "",
+        "layer_no": 2,
+        "product_id": 2868,
+        "product_key": "rm_medium",
+        "product_name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+        "product_uom_id": 12,
+        "qty_for_order": 0.28559999999999997,
+        "qty_per_fg": 0.28559999999999997,
+        "raw_last_purchase_price": 0.0,
+        "raw_standard_price": 22.0,
+        "requested_cost_source": "standard_price",
+        "role": "medium",
+        "stage_key": "2ply",
+        "target_uom_id": 12,
+        "unit_cost": 22.0,
+        "uom_id": 12,
+        "uom_name": "kg"
+      },
+      {
+        "converted_unit_cost": 25.0,
+        "cost_for_order": 8.568,
+        "cost_per_fg": 8.568,
+        "effective_cost_source": "standard_price",
+        "engine_role": "liner",
+        "fallback_reason": "",
+        "layer_no": 3,
+        "product_id": 2867,
+        "product_key": "rm_liner",
+        "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+        "product_uom_id": 12,
+        "qty_for_order": 0.34271999999999997,
+        "qty_per_fg": 0.34271999999999997,
+        "raw_last_purchase_price": 0.0,
+        "raw_standard_price": 25.0,
+        "requested_cost_source": "standard_price",
+        "role": "liner",
+        "stage_key": "2ply",
+        "target_uom_id": 12,
+        "unit_cost": 25.0,
+        "uom_id": 12,
+        "uom_name": "kg"
+      },
+      {
+        "converted_unit_cost": 300.0,
+        "cost_for_order": 285.59999999999997,
+        "cost_per_fg": 285.59999999999997,
+        "effective_cost_source": "standard_price",
+        "engine_role": "adhesive_corrugation",
+        "fallback_reason": "",
+        "layer_no": null,
+        "product_id": 19,
+        "product_key": "rm_adhesive_corrugation",
+        "product_name": "[ADH-001] Adhersive",
+        "product_uom_id": 12,
+        "qty_for_order": 0.952,
+        "qty_per_fg": 0.952,
+        "raw_last_purchase_price": 0.0,
+        "raw_standard_price": 300.0,
+        "requested_cost_source": "standard_price",
+        "role": "adhesive",
+        "stage_key": "2ply",
+        "target_uom_id": 12,
+        "unit_cost": 300.0,
+        "uom_id": 12,
+        "uom_name": "kg"
+      },
+      {
+        "converted_unit_cost": 300.0,
+        "cost_for_order": 114.24000000000001,
+        "cost_per_fg": 114.24000000000001,
+        "effective_cost_source": "standard_price",
+        "engine_role": "adhesive_board",
+        "fallback_reason": "",
+        "layer_no": null,
+        "product_id": 19,
+        "product_key": "rm_adhesive_board",
+        "product_name": "[ADH-001] Adhersive",
+        "product_uom_id": 12,
+        "qty_for_order": 0.3808,
+        "qty_per_fg": 0.3808,
+        "raw_last_purchase_price": 0.0,
+        "raw_standard_price": 300.0,
+        "requested_cost_source": "standard_price",
+        "role": "adhesive",
+        "stage_key": "board",
+        "target_uom_id": 12,
+        "unit_cost": 300.0,
+        "uom_id": 12,
+        "uom_name": "kg"
+      },
+      {
+        "converted_unit_cost": 300.0,
+        "cost_for_order": 28.560000000000002,
+        "cost_per_fg": 28.560000000000002,
+        "effective_cost_source": "standard_price",
+        "engine_role": "adhesive_fg",
+        "fallback_reason": "",
+        "layer_no": null,
+        "product_id": 19,
+        "product_key": "rm_adhesive_fg",
+        "product_name": "[ADH-001] Adhersive",
+        "product_uom_id": 12,
+        "qty_for_order": 0.0952,
+        "qty_per_fg": 0.0952,
+        "raw_last_purchase_price": 0.0,
+        "raw_standard_price": 300.0,
+        "requested_cost_source": "standard_price",
+        "role": "adhesive",
+        "stage_key": "fg",
+        "target_uom_id": 12,
+        "unit_cost": 300.0,
+        "uom_id": 12,
+        "uom_name": "kg"
+      }
+    ],
+    "cost_source": "standard_price",
+    "currency": {
+      "id": 1,
+      "name": "USD",
+      "symbol": "$"
+    },
+    "effective_cost_sources": [
+      "standard_price"
+    ],
+    "missing_cost": [],
+    "order_qty": 1.0,
+    "stage_costs": {
+      "blanks": {
+        "labor_cost": 1.0,
+        "labor_cost_method": "per_unit",
+        "labor_rate": 1.0,
+        "machine_cost": 1.0,
+        "machine_cost_method": "per_unit",
+        "machine_rate": 1.0,
+        "material_cost": 0.0,
+        "qty": 1.0,
+        "stage_qty_basis": "quantity_stage_graph_qty",
+        "stage_qty_basis_label": "per_blank",
+        "stage_total_cost": 2.0,
+        "total_operation_cost": 2.0
+      },
+      "board": {
+        "labor_cost": 0.0,
+        "machine_cost": 0.0,
+        "material_cost": 423.25919999999996,
+        "qty": 1.0,
+        "stage_qty_basis": "quantity_stage_graph_qty",
+        "stage_qty_basis_label": "per_sheet",
+        "stage_total_cost": 423.25919999999996,
+        "total_operation_cost": 0.0
+      },
+      "finished_goods": {
+        "labor_cost": 3.0,
+        "labor_cost_method": "per_unit",
+        "labor_rate": 3.0,
+        "machine_cost": 2.0,
+        "machine_cost_method": "per_unit",
+        "machine_rate": 2.0,
+        "material_cost": 28.560000000000002,
+        "qty": 1.0,
+        "stage_qty_basis": "quantity_stage_graph_qty",
+        "stage_qty_basis_label": "per_box",
+        "stage_total_cost": 33.56,
+        "total_operation_cost": 5.0
+      },
+      "raw_material": {
+        "labor_cost": 0.0,
+        "machine_cost": 0.0,
+        "material_cost": 0.0,
+        "qty": 2.3990400000000003,
+        "stage_qty_basis": "quantity_stage_graph_qty",
+        "stage_qty_basis_label": "per_kg",
+        "stage_total_cost": 0.0,
+        "total_operation_cost": 0.0
+      },
+      "sheet": {
+        "labor_cost": 1.0,
+        "labor_cost_method": "per_unit",
+        "labor_rate": 1.0,
+        "machine_cost": 1.0,
+        "machine_cost_method": "per_unit",
+        "machine_rate": 1.0,
+        "material_cost": 0.0,
+        "qty": 1.0,
+        "stage_qty_basis": "quantity_stage_graph_qty",
+        "stage_qty_basis_label": "per_sheet",
+        "stage_total_cost": 2.0,
+        "total_operation_cost": 2.0
+      }
+    },
+    "total_cost_for_order": 451.81919999999997,
+    "total_cost_per_fg": 451.81919999999997,
+    "total_operation_cost": 9.0,
+    "total_production_cost": 460.81919999999997
+  },
+  "metrics": {
+    "extra": {
+      "adhesive_total_kg_for_order": 1.428,
+      "adhesive_total_kg_per_box": 1.428,
+      "boxes_per_sheet": 1.0,
+      "consumables_debug": {
+        "adhesive_factor_board_kg_per_m2": 0.2,
+        "adhesive_factor_corrugation_kg_per_m2": 0.5,
+        "adhesive_factor_fg_kg_per_m2": 0.05,
+        "enable_adhesive": true,
+        "enable_consumables": true,
+        "enable_ink": false,
+        "enable_wire": false,
+        "ink_gm2_at_100pct_default": 5.0,
+        "wire_g_per_stitch_default": null,
+        "wire_stitches_per_cm_default": null
+      },
+      "diecut_ups": 1,
+      "diecut_waste_pct": 0.0,
+      "effective_ups": 1,
+      "effective_ups_machine": 1,
+      "geometry": {
+        "blank_length_mm": 2380.0,
+        "blank_width_mm": 800.0,
+        "seam_mm": 20.0
+      },
+      "kg_per_box_with_waste": 0.97104,
+      "layout": {
+        "blanks_per_column": 1,
+        "blanks_per_row": 1,
+        "blanks_per_sheet": 1,
+        "orientation": "normal",
+        "sheet_length_mm": 2380.0,
+        "sheet_usage_percent": 1.0,
+        "sheet_width_mm": 800.0,
+        "waste_percent": 0.0
+      },
+      "layout_blanks_per_sheet": 1,
+      "pieces_per_box": 1,
+      "printing_ups": 1,
+      "setup_waste_pct": 0.0,
+      "total_waste_pct": 0.0,
+      "trim_waste_pct": 0.0
+    },
+    "kg_per_box": 0.97104,
+    "m2_per_box": 1.904
+  },
+  "order_qty": 1.0,
+  "paper_resolution": [
+    {
+      "bf": 20.0,
+      "candidate_ids": [
+        2867,
+        39,
+        40,
+        1389
+      ],
+      "color": "Natural Shade",
+      "debug": {
+        "after_bf": 4,
+        "after_category_filter": 48,
+        "after_color": 34,
+        "after_deckle": 4,
+        "after_gsm": 10,
+        "candidates": [
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-100-GS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-100-GS-16] Kraft Paper (120, 100, Golden Shade(GS), 16)",
+            "product_id": 2343,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-100-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-100-NS-18] Kraft Paper (120, 100, Natural Shade(NS), 18)",
+            "product_id": 2806,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-GS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-79-GS-16] Kraft Paper (120, 79, Golden Shade(GS), 16)",
+            "product_id": 2332,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-79-GS-18] Kraft Paper (120, 79, Golden Shade(GS), 18)",
+            "product_id": 44,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-16] Kraft Paper (120, 79, Natural Shade(NS), 16)",
+            "product_id": 2344,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-18] Kraft Paper (120, 79, Natural Shade(NS), 18)",
+            "product_id": 49,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-20] Kraft Paper (120, 79, Natural Shade(NS), 20)",
+            "product_id": 59,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-90-NS-18] Kraft Paper (120, 90, Natural Shade(NS), 18)",
+            "product_id": 50,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-90-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-90-NS-20] Kraft Paper (120, 90, Natural Shade(NS), 20)",
+            "product_id": 60,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-100-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-100-NS-18] Kraft Paper (140, 100, Natural Shade(NS), 18)",
+            "product_id": 2225,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-120-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-120-NS-18] Kraft Paper (140, 120, Natural Shade(NS), 18)",
+            "product_id": 2733,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-68-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-68-NS-16] Kraft Paper (140, 68, Natural Shade(NS), 16)",
+            "product_id": 567,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-79-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-79-NS-16] Kraft Paper (140, 79, Natural Shade(NS), 16)",
+            "product_id": 2110,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-79-NS-18] Kraft Paper (140, 79, Natural Shade(NS), 18)",
+            "product_id": 2214,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-140-90-GS-18] Kraft Paper (140, 90, Golden Shade(GS), 18)",
+            "product_id": 485,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-100-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-100-NS-20] Kraft Paper (150, 100, Natural Shade(NS), 20)",
+            "product_id": 1401,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-48-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+            "product_id": 2868,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-150-79-GS-18] Kraft Paper (150, 79, Golden Shade(GS), 18)",
+            "product_id": 2805,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-79-NS-18] Kraft Paper (150, 79, Natural Shade(NS), 18)",
+            "product_id": 69,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-79-NS-20] Kraft Paper (150, 79, Natural Shade(NS), 20)",
+            "product_id": 79,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-GS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-150-90-GS-20] Kraft Paper (150, 90, Golden Shade(GS), 20)",
+            "product_id": 75,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-90-NS-18] Kraft Paper (150, 90, Natural Shade(NS), 18)",
+            "product_id": 70,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-90-NS-20] Kraft Paper (150, 90, Natural Shade(NS), 20)",
+            "product_id": 80,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-160-79-GS-18] Kraft Paper (160, 79, Golden Shade(GS), 18)",
+            "product_id": 2226,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-79-NS-18] Kraft Paper (160, 79, Natural Shade(NS), 18)",
+            "product_id": 2237,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-160-90-GS-18] Kraft Paper (160, 90, Golden Shade(GS), 18)",
+            "product_id": 1176,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-90-NS-18] Kraft Paper (160, 90, Natural Shade(NS), 18)",
+            "product_id": 1185,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-99-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-99-NS-20] Kraft Paper (160, 99, Natural Shade(NS), 20)",
+            "product_id": 2808,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-170-74-NS-40",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 170.0,
+            "name": "[KP-170-74-NS-40] Kraft Paper (170, 74, Natural Shade(NS), 40)",
+            "product_id": 2674,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-100-GS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-100-GS-20] Kraft Paper (180, 100, Golden Shade(GS), 20)",
+            "product_id": 1388,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 100.0,
+            "default_code": "KP-180-100-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-100-NS-20] Kraft Paper (180, 100, Natural Shade(NS), 20)",
+            "product_id": 1389,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-120-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-120-NS-18] Kraft Paper (180, 120, Natural Shade(NS), 18)",
+            "product_id": 2732,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-48-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-48-NS-18] Kraft Paper (180, 48, Natural Shade(NS), 18)",
+            "product_id": 2866,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 48.0,
+            "default_code": "KP-180-48-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+            "product_id": 2867,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-68-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-68-GS-18] Kraft Paper (180, 68, Golden Shade(GS), 18)",
+            "product_id": 2671,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-79-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-79-NS-18] Kraft Paper (180, 79, Natural Shade(NS), 18)",
+            "product_id": 29,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 79.0,
+            "default_code": "KP-180-79-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-79-NS-20] Kraft Paper (180, 79, Natural Shade(NS), 20)",
+            "product_id": 39,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-90-GS-18] Kraft Paper (180, 90, Golden Shade(GS), 18)",
+            "product_id": 25,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 16.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-NS-16",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-16] Kraft Paper (180, 90, Natural Shade(NS), 16)",
+            "product_id": 2804,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-18] Kraft Paper (180, 90, Natural Shade(NS), 18)",
+            "product_id": 30,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 90.0,
+            "default_code": "KP-180-90-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-20] Kraft Paper (180, 90, Natural Shade(NS), 20)",
+            "product_id": 40,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 16.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-99-NS-16",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-99-NS-16] Kraft Paper (180, 99, Natural Shade(NS), 16)",
+            "product_id": 2765,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-40-NS-24",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 200.0,
+            "name": "[KP-200-40-NS-24] Kraft Paper (200, 40, Natural Shade(NS), 24)",
+            "product_id": 2652,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-200-79-GS-18] Kraft Paper (200, 79, Golden Shade(GS), 18)",
+            "product_id": 2660,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 200.0,
+            "name": "[KP-200-79-NS-20] Kraft Paper (200, 79, Natural Shade(NS), 20)",
+            "product_id": 99,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-225-74-NS-40",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 225.0,
+            "name": "[KP-225-74-NS-40] Kraft Paper (225, 74, Natural Shade(NS), 40)",
+            "product_id": 2670,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": null,
+            "color_raw": null,
+            "deckle_cm": null,
+            "default_code": "",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "kPaper",
+            "product_id": 2649,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": null,
+            "color_raw": null,
+            "deckle_cm": null,
+            "default_code": "",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "papers",
+            "product_id": 2646,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          }
+        ],
+        "final_candidate_ids": [
+          2867,
+          39,
+          40,
+          1389
+        ],
+        "first_failed_stage": "",
+        "initial_product_search_count": 371
+      },
+      "gsm": 180.0,
+      "key": "liner:1",
+      "layer_no": 1,
+      "product_id": 2867,
+      "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+      "qty_per_fg": 0.34271999999999997,
+      "qty_uom": "kg",
+      "required_deckle_cm": 48.0,
+      "role": "liner",
+      "status": "exact",
+      "uom_id": 12,
+      "uom_name": "kg"
+    },
+    {
+      "bf": 20.0,
+      "candidate_ids": [
+        2868,
+        79,
+        80,
+        1401
+      ],
+      "color": "",
+      "debug": {
+        "after_bf": 4,
+        "after_category_filter": 48,
+        "after_color": 34,
+        "after_deckle": 4,
+        "after_gsm": 6,
+        "candidates": [
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-100-GS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-100-GS-16] Kraft Paper (120, 100, Golden Shade(GS), 16)",
+            "product_id": 2343,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-100-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-100-NS-18] Kraft Paper (120, 100, Natural Shade(NS), 18)",
+            "product_id": 2806,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-GS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-79-GS-16] Kraft Paper (120, 79, Golden Shade(GS), 16)",
+            "product_id": 2332,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-79-GS-18] Kraft Paper (120, 79, Golden Shade(GS), 18)",
+            "product_id": 44,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-16] Kraft Paper (120, 79, Natural Shade(NS), 16)",
+            "product_id": 2344,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-18] Kraft Paper (120, 79, Natural Shade(NS), 18)",
+            "product_id": 49,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-20] Kraft Paper (120, 79, Natural Shade(NS), 20)",
+            "product_id": 59,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-90-NS-18] Kraft Paper (120, 90, Natural Shade(NS), 18)",
+            "product_id": 50,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-90-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-90-NS-20] Kraft Paper (120, 90, Natural Shade(NS), 20)",
+            "product_id": 60,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-100-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-100-NS-18] Kraft Paper (140, 100, Natural Shade(NS), 18)",
+            "product_id": 2225,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-120-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-120-NS-18] Kraft Paper (140, 120, Natural Shade(NS), 18)",
+            "product_id": 2733,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-68-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-68-NS-16] Kraft Paper (140, 68, Natural Shade(NS), 16)",
+            "product_id": 567,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-79-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-79-NS-16] Kraft Paper (140, 79, Natural Shade(NS), 16)",
+            "product_id": 2110,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-79-NS-18] Kraft Paper (140, 79, Natural Shade(NS), 18)",
+            "product_id": 2214,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-140-90-GS-18] Kraft Paper (140, 90, Golden Shade(GS), 18)",
+            "product_id": 485,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 100.0,
+            "default_code": "KP-150-100-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 150.0,
+            "name": "[KP-150-100-NS-20] Kraft Paper (150, 100, Natural Shade(NS), 20)",
+            "product_id": 1401,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 48.0,
+            "default_code": "KP-150-48-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 150.0,
+            "name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+            "product_id": 2868,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-150-79-GS-18] Kraft Paper (150, 79, Golden Shade(GS), 18)",
+            "product_id": 2805,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 150.0,
+            "name": "[KP-150-79-NS-18] Kraft Paper (150, 79, Natural Shade(NS), 18)",
+            "product_id": 69,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 79.0,
+            "default_code": "KP-150-79-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 150.0,
+            "name": "[KP-150-79-NS-20] Kraft Paper (150, 79, Natural Shade(NS), 20)",
+            "product_id": 79,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-GS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-150-90-GS-20] Kraft Paper (150, 90, Golden Shade(GS), 20)",
+            "product_id": 75,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 150.0,
+            "name": "[KP-150-90-NS-18] Kraft Paper (150, 90, Natural Shade(NS), 18)",
+            "product_id": 70,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 90.0,
+            "default_code": "KP-150-90-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 150.0,
+            "name": "[KP-150-90-NS-20] Kraft Paper (150, 90, Natural Shade(NS), 20)",
+            "product_id": 80,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-160-79-GS-18] Kraft Paper (160, 79, Golden Shade(GS), 18)",
+            "product_id": 2226,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-79-NS-18] Kraft Paper (160, 79, Natural Shade(NS), 18)",
+            "product_id": 2237,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-160-90-GS-18] Kraft Paper (160, 90, Golden Shade(GS), 18)",
+            "product_id": 1176,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-90-NS-18] Kraft Paper (160, 90, Natural Shade(NS), 18)",
+            "product_id": 1185,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-99-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-99-NS-20] Kraft Paper (160, 99, Natural Shade(NS), 20)",
+            "product_id": 2808,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-170-74-NS-40",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 170.0,
+            "name": "[KP-170-74-NS-40] Kraft Paper (170, 74, Natural Shade(NS), 40)",
+            "product_id": 2674,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-100-GS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-100-GS-20] Kraft Paper (180, 100, Golden Shade(GS), 20)",
+            "product_id": 1388,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-100-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-100-NS-20] Kraft Paper (180, 100, Natural Shade(NS), 20)",
+            "product_id": 1389,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-120-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-120-NS-18] Kraft Paper (180, 120, Natural Shade(NS), 18)",
+            "product_id": 2732,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-48-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-48-NS-18] Kraft Paper (180, 48, Natural Shade(NS), 18)",
+            "product_id": 2866,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-48-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+            "product_id": 2867,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-68-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-68-GS-18] Kraft Paper (180, 68, Golden Shade(GS), 18)",
+            "product_id": 2671,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-79-NS-18] Kraft Paper (180, 79, Natural Shade(NS), 18)",
+            "product_id": 29,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-79-NS-20] Kraft Paper (180, 79, Natural Shade(NS), 20)",
+            "product_id": 39,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-90-GS-18] Kraft Paper (180, 90, Golden Shade(GS), 18)",
+            "product_id": 25,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-16] Kraft Paper (180, 90, Natural Shade(NS), 16)",
+            "product_id": 2804,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-18] Kraft Paper (180, 90, Natural Shade(NS), 18)",
+            "product_id": 30,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-20] Kraft Paper (180, 90, Natural Shade(NS), 20)",
+            "product_id": 40,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-99-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 180.0,
+            "name": "[KP-180-99-NS-16] Kraft Paper (180, 99, Natural Shade(NS), 16)",
+            "product_id": 2765,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-40-NS-24",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 200.0,
+            "name": "[KP-200-40-NS-24] Kraft Paper (200, 40, Natural Shade(NS), 24)",
+            "product_id": 2652,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-200-79-GS-18] Kraft Paper (200, 79, Golden Shade(GS), 18)",
+            "product_id": 2660,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 200.0,
+            "name": "[KP-200-79-NS-20] Kraft Paper (200, 79, Natural Shade(NS), 20)",
+            "product_id": 99,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-225-74-NS-40",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 225.0,
+            "name": "[KP-225-74-NS-40] Kraft Paper (225, 74, Natural Shade(NS), 40)",
+            "product_id": 2670,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": null,
+            "color_raw": null,
+            "deckle_cm": null,
+            "default_code": "",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "kPaper",
+            "product_id": 2649,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": null,
+            "color_raw": null,
+            "deckle_cm": null,
+            "default_code": "",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "papers",
+            "product_id": 2646,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          }
+        ],
+        "final_candidate_ids": [
+          2868,
+          79,
+          80,
+          1401
+        ],
+        "first_failed_stage": "",
+        "initial_product_search_count": 371
+      },
+      "gsm": 150.0,
+      "key": "medium:2",
+      "layer_no": 2,
+      "product_id": 2868,
+      "product_name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+      "qty_per_fg": 0.28559999999999997,
+      "qty_uom": "kg",
+      "required_deckle_cm": 48.0,
+      "role": "medium",
+      "status": "exact",
+      "uom_id": 12,
+      "uom_name": "kg"
+    },
+    {
+      "bf": 20.0,
+      "candidate_ids": [
+        2867,
+        39,
+        40,
+        1389
+      ],
+      "color": "",
+      "debug": {
+        "after_bf": 4,
+        "after_category_filter": 48,
+        "after_color": 34,
+        "after_deckle": 4,
+        "after_gsm": 10,
+        "candidates": [
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-100-GS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-100-GS-16] Kraft Paper (120, 100, Golden Shade(GS), 16)",
+            "product_id": 2343,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-100-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-100-NS-18] Kraft Paper (120, 100, Natural Shade(NS), 18)",
+            "product_id": 2806,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-GS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-79-GS-16] Kraft Paper (120, 79, Golden Shade(GS), 16)",
+            "product_id": 2332,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-120-79-GS-18] Kraft Paper (120, 79, Golden Shade(GS), 18)",
+            "product_id": 44,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-16] Kraft Paper (120, 79, Natural Shade(NS), 16)",
+            "product_id": 2344,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-18] Kraft Paper (120, 79, Natural Shade(NS), 18)",
+            "product_id": 49,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-79-NS-20] Kraft Paper (120, 79, Natural Shade(NS), 20)",
+            "product_id": 59,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-90-NS-18] Kraft Paper (120, 90, Natural Shade(NS), 18)",
+            "product_id": 50,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-120-90-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 120.0,
+            "name": "[KP-120-90-NS-20] Kraft Paper (120, 90, Natural Shade(NS), 20)",
+            "product_id": 60,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-100-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-100-NS-18] Kraft Paper (140, 100, Natural Shade(NS), 18)",
+            "product_id": 2225,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-120-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-120-NS-18] Kraft Paper (140, 120, Natural Shade(NS), 18)",
+            "product_id": 2733,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-68-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-68-NS-16] Kraft Paper (140, 68, Natural Shade(NS), 16)",
+            "product_id": 567,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-79-NS-16",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-79-NS-16] Kraft Paper (140, 79, Natural Shade(NS), 16)",
+            "product_id": 2110,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 140.0,
+            "name": "[KP-140-79-NS-18] Kraft Paper (140, 79, Natural Shade(NS), 18)",
+            "product_id": 2214,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-140-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-140-90-GS-18] Kraft Paper (140, 90, Golden Shade(GS), 18)",
+            "product_id": 485,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-100-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-100-NS-20] Kraft Paper (150, 100, Natural Shade(NS), 20)",
+            "product_id": 1401,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-48-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+            "product_id": 2868,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-150-79-GS-18] Kraft Paper (150, 79, Golden Shade(GS), 18)",
+            "product_id": 2805,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-79-NS-18] Kraft Paper (150, 79, Natural Shade(NS), 18)",
+            "product_id": 69,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-79-NS-20] Kraft Paper (150, 79, Natural Shade(NS), 20)",
+            "product_id": 79,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-GS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-150-90-GS-20] Kraft Paper (150, 90, Golden Shade(GS), 20)",
+            "product_id": 75,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-90-NS-18] Kraft Paper (150, 90, Natural Shade(NS), 18)",
+            "product_id": 70,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-150-90-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 150.0,
+            "name": "[KP-150-90-NS-20] Kraft Paper (150, 90, Natural Shade(NS), 20)",
+            "product_id": 80,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-160-79-GS-18] Kraft Paper (160, 79, Golden Shade(GS), 18)",
+            "product_id": 2226,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-79-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-79-NS-18] Kraft Paper (160, 79, Natural Shade(NS), 18)",
+            "product_id": 2237,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-160-90-GS-18] Kraft Paper (160, 90, Golden Shade(GS), 18)",
+            "product_id": 1176,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-90-NS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-90-NS-18] Kraft Paper (160, 90, Natural Shade(NS), 18)",
+            "product_id": 1185,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-160-99-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 160.0,
+            "name": "[KP-160-99-NS-20] Kraft Paper (160, 99, Natural Shade(NS), 20)",
+            "product_id": 2808,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-170-74-NS-40",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 170.0,
+            "name": "[KP-170-74-NS-40] Kraft Paper (170, 74, Natural Shade(NS), 40)",
+            "product_id": 2674,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-100-GS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-100-GS-20] Kraft Paper (180, 100, Golden Shade(GS), 20)",
+            "product_id": 1388,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 100.0,
+            "default_code": "KP-180-100-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-100-NS-20] Kraft Paper (180, 100, Natural Shade(NS), 20)",
+            "product_id": 1389,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-120-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-120-NS-18] Kraft Paper (180, 120, Natural Shade(NS), 18)",
+            "product_id": 2732,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-48-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-48-NS-18] Kraft Paper (180, 48, Natural Shade(NS), 18)",
+            "product_id": 2866,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 48.0,
+            "default_code": "KP-180-48-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+            "product_id": 2867,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-68-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-68-GS-18] Kraft Paper (180, 68, Golden Shade(GS), 18)",
+            "product_id": 2671,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-79-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-79-NS-18] Kraft Paper (180, 79, Natural Shade(NS), 18)",
+            "product_id": 29,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 79.0,
+            "default_code": "KP-180-79-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-79-NS-20] Kraft Paper (180, 79, Natural Shade(NS), 20)",
+            "product_id": 39,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-180-90-GS-18] Kraft Paper (180, 90, Golden Shade(GS), 18)",
+            "product_id": 25,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 16.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-NS-16",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-16] Kraft Paper (180, 90, Natural Shade(NS), 16)",
+            "product_id": 2804,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 18.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-90-NS-18",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-18] Kraft Paper (180, 90, Natural Shade(NS), 18)",
+            "product_id": 30,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 20.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": 90.0,
+            "default_code": "KP-180-90-NS-20",
+            "filters": {
+              "bf_ok": true,
+              "color_ok": true,
+              "deckle_ok": true,
+              "final_used": true,
+              "gsm_ok": true
+            },
+            "final_status": "accepted",
+            "first_failed_step": null,
+            "gsm": 180.0,
+            "name": "[KP-180-90-NS-20] Kraft Paper (180, 90, Natural Shade(NS), 20)",
+            "product_id": 40,
+            "rejection_reason": "",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": 16.0,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-180-99-NS-16",
+            "filters": {
+              "bf_ok": false,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": true
+            },
+            "final_status": "rejected",
+            "first_failed_step": "bf",
+            "gsm": 180.0,
+            "name": "[KP-180-99-NS-16] Kraft Paper (180, 99, Natural Shade(NS), 16)",
+            "product_id": 2765,
+            "rejection_reason": "BF outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-40-NS-24",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 200.0,
+            "name": "[KP-200-40-NS-24] Kraft Paper (200, 40, Natural Shade(NS), 24)",
+            "product_id": 2652,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "golden shade",
+            "color_raw": "Golden Shade(GS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-79-GS-18",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "[KP-200-79-GS-18] Kraft Paper (200, 79, Golden Shade(GS), 18)",
+            "product_id": 2660,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-200-79-NS-20",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 200.0,
+            "name": "[KP-200-79-NS-20] Kraft Paper (200, 79, Natural Shade(NS), 20)",
+            "product_id": 99,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": "natural shade",
+            "color_raw": "Natural Shade(NS)",
+            "deckle_cm": null,
+            "default_code": "KP-225-74-NS-40",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": true,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": false
+            },
+            "final_status": "rejected",
+            "first_failed_step": "gsm",
+            "gsm": 225.0,
+            "name": "[KP-225-74-NS-40] Kraft Paper (225, 74, Natural Shade(NS), 40)",
+            "product_id": 2670,
+            "rejection_reason": "GSM outside tolerance",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": null,
+            "color_raw": null,
+            "deckle_cm": null,
+            "default_code": "",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "kPaper",
+            "product_id": 2649,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          },
+          {
+            "bf": null,
+            "color_norm": null,
+            "color_raw": null,
+            "deckle_cm": null,
+            "default_code": "",
+            "filters": {
+              "bf_ok": null,
+              "color_ok": false,
+              "deckle_ok": null,
+              "final_used": false,
+              "gsm_ok": null
+            },
+            "final_status": "rejected",
+            "first_failed_step": "color",
+            "gsm": null,
+            "name": "papers",
+            "product_id": 2646,
+            "rejection_reason": "strict color mismatch",
+            "required_color_norm": "natural shade"
+          }
+        ],
+        "final_candidate_ids": [
+          2867,
+          39,
+          40,
+          1389
+        ],
+        "first_failed_stage": "",
+        "initial_product_search_count": 371
+      },
+      "gsm": 180.0,
+      "key": "liner:3",
+      "layer_no": 3,
+      "product_id": 2867,
+      "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+      "qty_per_fg": 0.34271999999999997,
+      "qty_uom": "kg",
+      "required_deckle_cm": 48.0,
+      "role": "liner",
+      "status": "exact",
+      "uom_id": 12,
+      "uom_name": "kg"
+    }
+  ],
+  "phase8_shadow_runtime": {
+    "material_requirements": [
+      {
+        "attach_quantity_basis": "per_box",
+        "default_bucket": "board",
+        "is_mandatory": false,
+        "material_profile_id": 1,
+        "material_type": "consumable",
+        "product_tmpl_id": 3,
+        "role": "adhesive",
+        "rule_id": 1,
+        "stage_code": "seaming",
+        "stage_seed_key": null,
+        "stage_type": "conversion"
+      }
+    ],
+    "parity_report": {
+      "buckets": {
+        "matches": [
+          {
+            "bucket": "board",
+            "stage": "2ply"
+          },
+          {
+            "bucket": "board",
+            "stage": "board"
+          },
+          {
+            "bucket": "sheet",
+            "stage": "ts_print"
+          },
+          {
+            "bucket": "sheet",
+            "stage": "lamination"
+          },
+          {
+            "bucket": "blanks",
+            "stage": "diecut"
+          },
+          {
+            "bucket": "blanks",
+            "stage": "peeloff"
+          },
+          {
+            "bucket": "finished_goods",
+            "stage": "seaming"
+          },
+          {
+            "bucket": "finished_goods",
+            "stage": "fg"
+          }
+        ],
+        "mismatches": []
+      },
+      "materials": {
+        "extra_in_shadow": [
+          {
+            "attach_quantity_basis": "per_box",
+            "bucket": "finished_goods",
+            "consumption_type": "unit",
+            "material_type": "consumable",
+            "role": "adhesive",
+            "stage": "seaming"
+          }
+        ],
+        "matched": [],
+        "missing_in_shadow": [
+          {
+            "bucket": "board",
+            "consumption_type": "area",
+            "kind": "",
+            "role": "liner",
+            "stage": "2ply"
+          },
+          {
+            "bucket": "board",
+            "consumption_type": "area",
+            "kind": "",
+            "role": "medium",
+            "stage": "2ply"
+          }
+        ],
+        "synthetic_extra_in_shadow": [],
+        "synthetic_missing_in_shadow": [
+          {
+            "bucket": "board",
+            "consumption_type": "area",
+            "kind": "adhesive_corrugation",
+            "role": "adhesive_corrugation",
+            "stage": "2ply"
+          },
+          {
+            "bucket": "board",
+            "consumption_type": "area",
+            "kind": "adhesive_board",
+            "role": "adhesive_board",
+            "stage": "board"
+          },
+          {
+            "bucket": "finished_goods",
+            "consumption_type": "area",
+            "kind": "adhesive_fg",
+            "role": "adhesive_fg",
+            "stage": "fg"
+          }
+        ]
+      },
+      "stages": {
+        "bucket_order_differences": [
+          {
+            "bucket": "blanks",
+            "engine_index": 3,
+            "shadow_index": 2
+          },
+          {
+            "bucket": "board",
+            "engine_index": 1,
+            "shadow_index": 0
+          },
+          {
+            "bucket": "finished_goods",
+            "engine_index": 4,
+            "shadow_index": 3
+          },
+          {
+            "bucket": "sheet",
+            "engine_index": 2,
+            "shadow_index": 1
+          }
+        ],
+        "engine_bucket_order": [
+          "raw_material",
+          "board",
+          "sheet",
+          "blanks",
+          "finished_goods"
+        ],
+        "engine_process_stage_order": [
+          "raw_material",
+          "board",
+          "sheet",
+          "blanks",
+          "finished_goods"
+        ],
+        "extra_buckets_in_shadow": [],
+        "missing_buckets_in_shadow": [
+          "raw_material"
+        ],
+        "shadow_bucket_order": [
+          "board",
+          "sheet",
+          "blanks",
+          "finished_goods"
+        ],
+        "shadow_process_stage_order": [
+          "2ply",
+          "board",
+          "ts_print",
+          "lamination",
+          "diecut",
+          "peeloff",
+          "seaming",
+          "fg"
+        ]
+      },
+      "summary": {
+        "buckets": {
+          "matches": 8,
+          "mismatches": 0
+        },
+        "materials": {
+          "engine_keys": 5,
+          "extra_in_shadow": 1,
+          "matched": 0,
+          "missing_in_shadow": 2,
+          "shadow_keys": 1,
+          "synthetic_extra_in_shadow": 0,
+          "synthetic_missing_in_shadow": 3
+        },
+        "stages": {
+          "bucket_order_differences": 4,
+          "engine_bucket_count": 5,
+          "extra_buckets_in_shadow": 0,
+          "missing_buckets_in_shadow": 1,
+          "shadow_bucket_count": 4
+        }
+      },
+      "warnings": [
+        "2 material keys present in engine rm_requirements but missing in Phase 8 shadow material_requirements.",
+        "1 material keys present only in Phase 8 shadow material_requirements.",
+        "3 synthetic consumable material keys (e.g. adhesive_*, wire_*, tape_*) are not yet mapped in Phase 8 shadow material_requirements.",
+        "Quantity buckets raw_material appear in Engine V2 StageGraph but are not covered by any Phase 8 shadow routing stage.",
+        "4 quantity buckets have different order between Engine V2 StageGraph and Phase 8 shadow routing."
+      ]
+    },
+    "routing": {
+      "plant_id": 1,
+      "routing_template_code": "V2_COMPAT_2PLY_BOARD_FG",
+      "routing_template_id": 2,
+      "routing_template_name": "V2 Compat: Standard 2-Ply Board to FG",
+      "seed_key": "v2_compat.routing.standard_2ply_board_fg",
+      "selection_details": {
+        "plant_code": "DEFAULT",
+        "plant_id": 1,
+        "source": "plant",
+        "template_id": 2,
+        "template_name": "V2 Compat: Standard 2-Ply Board to FG"
+      },
+      "selection_source": "plant",
+      "stages": [
+        {
+          "input_quantity_node_key": "raw_material",
+          "is_optional": false,
+          "output_quantity_node_key": "board",
+          "plant_binding_id": 2,
+          "routing_workcenter_id": null,
+          "sequence": 10,
+          "stage_code": "2ply",
+          "stage_name": "2-Ply Corrugation",
+          "stage_template_id": 7,
+          "stage_type": "corrugation",
+          "workcenter_id": null
+        },
+        {
+          "input_quantity_node_key": "board",
+          "is_optional": false,
+          "output_quantity_node_key": "board",
+          "plant_binding_id": 3,
+          "routing_workcenter_id": null,
+          "sequence": 20,
+          "stage_code": "board",
+          "stage_name": "Board Formation",
+          "stage_template_id": 8,
+          "stage_type": "corrugation",
+          "workcenter_id": null
+        },
+        {
+          "input_quantity_node_key": "sheet",
+          "is_optional": true,
+          "output_quantity_node_key": "sheet",
+          "plant_binding_id": 4,
+          "routing_workcenter_id": null,
+          "sequence": 30,
+          "stage_code": "ts_print",
+          "stage_name": "Top Sheet Printing",
+          "stage_template_id": 9,
+          "stage_type": "printing",
+          "workcenter_id": null
+        },
+        {
+          "input_quantity_node_key": "sheet",
+          "is_optional": true,
+          "output_quantity_node_key": "sheet",
+          "plant_binding_id": 5,
+          "routing_workcenter_id": null,
+          "sequence": 40,
+          "stage_code": "lamination",
+          "stage_name": "Lamination",
+          "stage_template_id": 10,
+          "stage_type": "lamination",
+          "workcenter_id": null
+        },
+        {
+          "input_quantity_node_key": "sheet",
+          "is_optional": false,
+          "output_quantity_node_key": "blanks",
+          "plant_binding_id": 6,
+          "routing_workcenter_id": null,
+          "sequence": 50,
+          "stage_code": "diecut",
+          "stage_name": "Die-cut",
+          "stage_template_id": 11,
+          "stage_type": "diecut",
+          "workcenter_id": null
+        },
+        {
+          "input_quantity_node_key": "blanks",
+          "is_optional": true,
+          "output_quantity_node_key": "blanks",
+          "plant_binding_id": 7,
+          "routing_workcenter_id": null,
+          "sequence": 55,
+          "stage_code": "peeloff",
+          "stage_name": "Peel-off / Waste Stripping",
+          "stage_template_id": 12,
+          "stage_type": "diecut",
+          "workcenter_id": null
+        },
+        {
+          "input_quantity_node_key": "blanks",
+          "is_optional": false,
+          "output_quantity_node_key": "finished_goods",
+          "plant_binding_id": 8,
+          "routing_workcenter_id": null,
+          "sequence": 60,
+          "stage_code": "seaming",
+          "stage_name": "Seaming / Jointing",
+          "stage_template_id": 13,
+          "stage_type": "conversion",
+          "workcenter_id": null
+        },
+        {
+          "input_quantity_node_key": "finished_goods",
+          "is_optional": false,
+          "output_quantity_node_key": "finished_goods",
+          "plant_binding_id": 9,
+          "routing_workcenter_id": null,
+          "sequence": 70,
+          "stage_code": "fg",
+          "stage_name": "Finished Goods",
+          "stage_template_id": 14,
+          "stage_type": "fg",
+          "workcenter_id": null
+        }
+      ],
+      "warnings": []
+    },
+    "stage_cost_lines": [
+      {
+        "bucket": "board",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "2ply",
+        "stage_seed_key": null,
+        "stage_type": "corrugation",
+        "total_cost": 0.0
+      },
+      {
+        "bucket": "board",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "board",
+        "stage_seed_key": null,
+        "stage_type": "corrugation",
+        "total_cost": 0.0
+      },
+      {
+        "bucket": "sheet",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "ts_print",
+        "stage_seed_key": null,
+        "stage_type": "printing",
+        "total_cost": 0.0
+      },
+      {
+        "bucket": "sheet",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "lamination",
+        "stage_seed_key": null,
+        "stage_type": "lamination",
+        "total_cost": 0.0
+      },
+      {
+        "bucket": "blanks",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "diecut",
+        "stage_seed_key": null,
+        "stage_type": "diecut",
+        "total_cost": 0.0
+      },
+      {
+        "bucket": "blanks",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "peeloff",
+        "stage_seed_key": null,
+        "stage_type": "diecut",
+        "total_cost": 0.0
+      },
+      {
+        "bucket": "finished_goods",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "seaming",
+        "stage_seed_key": null,
+        "stage_type": "conversion",
+        "total_cost": 0.0
+      },
+      {
+        "bucket": "finished_goods",
+        "material_cost": 0.0,
+        "notes": null,
+        "operation_cost": 0.0,
+        "stage_code": "fg",
+        "stage_seed_key": null,
+        "stage_type": "fg",
+        "total_cost": 0.0
+      }
+    ]
+  },
+  "plant_id": 1,
+  "quantity_stage_graph": {
+    "edges": [
+      {
+        "from": "raw_material",
+        "qty_ratio": 1.0,
+        "to": "board",
+        "waste_percent": 0.0
+      },
+      {
+        "from": "board",
+        "qty_ratio": 1.0,
+        "to": "sheet",
+        "waste_percent": 0.0
+      },
+      {
+        "from": "sheet",
+        "qty_ratio": 1.0,
+        "to": "blanks",
+        "waste_percent": 0.0
+      },
+      {
+        "from": "blanks",
+        "qty_ratio": 1.0,
+        "to": "finished_goods",
+        "waste_percent": 0.0
+      }
+    ],
+    "nodes": {
+      "blanks": {
+        "meta": {
+          "operation_cost": {
+            "labor_cost": 1.0,
+            "labor_cost_method": "per_unit",
+            "labor_rate": 1.0,
+            "machine_cost": 1.0,
+            "machine_cost_method": "per_unit",
+            "machine_rate": 1.0,
+            "stage_material_cost": 0.0,
+            "stage_qty": 1.0,
+            "stage_qty_basis": "quantity_stage_graph_qty",
+            "stage_qty_basis_label": "per_blank",
+            "stage_total_cost": 2.0,
+            "total_operation_cost": 2.0
+          }
+        },
+        "qty": 1
+      },
+      "board": {
+        "meta": {
+          "operation_cost": {
+            "labor_cost": 0.0,
+            "labor_cost_method": "",
+            "labor_rate": 0.0,
+            "machine_cost": 0.0,
+            "machine_cost_method": "",
+            "machine_rate": 0.0,
+            "stage_material_cost": 423.25919999999996,
+            "stage_qty": 1.0,
+            "stage_qty_basis": "quantity_stage_graph_qty",
+            "stage_qty_basis_label": "per_sheet",
+            "stage_total_cost": 423.25919999999996,
+            "total_operation_cost": 0.0
+          }
+        },
+        "qty": 1
+      },
+      "finished_goods": {
+        "meta": {
+          "operation_cost": {
+            "labor_cost": 3.0,
+            "labor_cost_method": "per_unit",
+            "labor_rate": 3.0,
+            "machine_cost": 2.0,
+            "machine_cost_method": "per_unit",
+            "machine_rate": 2.0,
+            "stage_material_cost": 28.560000000000002,
+            "stage_qty": 1.0,
+            "stage_qty_basis": "quantity_stage_graph_qty",
+            "stage_qty_basis_label": "per_box",
+            "stage_total_cost": 33.56,
+            "total_operation_cost": 5.0
+          }
+        },
+        "qty": 1
+      },
+      "raw_material": {
+        "meta": {
+          "area_per_sheet_m2": 1.904,
+          "operation_cost": {
+            "labor_cost": 0.0,
+            "labor_cost_method": "",
+            "labor_rate": 0.0,
+            "machine_cost": 0.0,
+            "machine_cost_method": "",
+            "machine_rate": 0.0,
+            "stage_material_cost": 0.0,
+            "stage_qty": 2.3990400000000003,
+            "stage_qty_basis": "quantity_stage_graph_qty",
+            "stage_qty_basis_label": "per_kg",
+            "stage_total_cost": 0.0,
+            "total_operation_cost": 0.0
+          },
+          "rm_by_role": {
+            "adhesive_board": 0.3808,
+            "adhesive_corrugation": 0.952,
+            "adhesive_fg": 0.0952,
+            "liner": 0.6854399999999999,
+            "medium": 0.28559999999999997
+          },
+          "rm_layers": [
+            {
+              "gsm": 180.0,
+              "layer_no": 1,
+              "product_key": "rm_liner",
+              "qty_kg": 0.34271999999999997,
+              "role": "liner"
+            },
+            {
+              "gsm": 150.0,
+              "layer_no": 2,
+              "product_key": "rm_medium",
+              "qty_kg": 0.28559999999999997,
+              "role": "medium"
+            },
+            {
+              "gsm": 180.0,
+              "layer_no": 3,
+              "product_key": "rm_liner",
+              "qty_kg": 0.34271999999999997,
+              "role": "liner"
+            },
+            {
+              "gsm": 500.0,
+              "layer_no": null,
+              "product_key": "rm_adhesive_corrugation",
+              "qty_kg": 0.952,
+              "role": "adhesive_corrugation"
+            },
+            {
+              "gsm": 200.00000000000003,
+              "layer_no": null,
+              "product_key": "rm_adhesive_board",
+              "qty_kg": 0.3808,
+              "role": "adhesive_board"
+            },
+            {
+              "gsm": 50.00000000000001,
+              "layer_no": null,
+              "product_key": "rm_adhesive_fg",
+              "qty_kg": 0.0952,
+              "role": "adhesive_fg"
+            }
+          ],
+          "rm_total_kg": 2.3990400000000003,
+          "rm_unit": [],
+          "sheets_required": 1
+        },
+        "qty": 2.3990400000000003
+      },
+      "sheet": {
+        "meta": {
+          "operation_cost": {
+            "labor_cost": 1.0,
+            "labor_cost_method": "per_unit",
+            "labor_rate": 1.0,
+            "machine_cost": 1.0,
+            "machine_cost_method": "per_unit",
+            "machine_rate": 1.0,
+            "stage_material_cost": 0.0,
+            "stage_qty": 1.0,
+            "stage_qty_basis": "quantity_stage_graph_qty",
+            "stage_qty_basis_label": "per_sheet",
+            "stage_total_cost": 2.0,
+            "total_operation_cost": 2.0
+          }
+        },
+        "qty": 1
+      }
+    }
+  },
+  "rm_requirements": [
+    {
+      "consumption_type": "area",
+      "layer_no": 1,
+      "metadata": {
+        "gsm": 180.0,
+        "layer_no": 1,
+        "resolution": {
+          "candidate_ids": [
+            2867,
+            39,
+            40,
+            1389
+          ],
+          "product_id": 2867,
+          "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+          "status": "exact",
+          "uom_id": 12,
+          "uom_name": "kg"
+        },
+        "resolution_product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+        "resolution_status": "exact",
+        "role": "liner",
+        "type": "liner"
+      },
+      "product_key": "rm_liner",
+      "qty_per_fg": 0.34271999999999997,
+      "qty_uom": "kg",
+      "role": "liner",
+      "stage_key": "2ply"
+    },
+    {
+      "consumption_type": "area",
+      "layer_no": 2,
+      "metadata": {
+        "gsm": 150.0,
+        "layer_no": 2,
+        "resolution": {
+          "candidate_ids": [
+            2868,
+            79,
+            80,
+            1401
+          ],
+          "product_id": 2868,
+          "product_name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+          "status": "exact",
+          "uom_id": 12,
+          "uom_name": "kg"
+        },
+        "resolution_product_name": "[KP-150-48-NS-20] Kraft Paper (150, 48, Natural Shade(NS), 20)",
+        "resolution_status": "exact",
+        "role": "medium",
+        "type": "medium"
+      },
+      "product_key": "rm_medium",
+      "qty_per_fg": 0.28559999999999997,
+      "qty_uom": "kg",
+      "role": "medium",
+      "stage_key": "2ply"
+    },
+    {
+      "consumption_type": "area",
+      "layer_no": 3,
+      "metadata": {
+        "gsm": 180.0,
+        "layer_no": 3,
+        "resolution": {
+          "candidate_ids": [
+            2867,
+            39,
+            40,
+            1389
+          ],
+          "product_id": 2867,
+          "product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+          "status": "exact",
+          "uom_id": 12,
+          "uom_name": "kg"
+        },
+        "resolution_product_name": "[KP-180-48-NS-20] Kraft Paper (180, 48, Natural Shade(NS), 20)",
+        "resolution_status": "exact",
+        "role": "liner",
+        "type": "liner"
+      },
+      "product_key": "rm_liner",
+      "qty_per_fg": 0.34271999999999997,
+      "qty_uom": "kg",
+      "role": "liner",
+      "stage_key": "2ply"
+    },
+    {
+      "consumption_type": "area",
+      "layer_no": null,
+      "metadata": {
+        "factor_kg_per_m2": 0.5,
+        "kind": "adhesive_corrugation"
+      },
+      "product_key": "rm_adhesive_corrugation",
+      "qty_per_fg": 0.952,
+      "qty_uom": "kg",
+      "role": "adhesive_corrugation",
+      "stage_key": "2ply"
+    },
+    {
+      "consumption_type": "area",
+      "layer_no": null,
+      "metadata": {
+        "factor_kg_per_m2": 0.2,
+        "kind": "adhesive_board"
+      },
+      "product_key": "rm_adhesive_board",
+      "qty_per_fg": 0.3808,
+      "qty_uom": "kg",
+      "role": "adhesive_board",
+      "stage_key": "board"
+    },
+    {
+      "consumption_type": "area",
+      "layer_no": null,
+      "metadata": {
+        "factor_kg_per_m2": 0.05,
+        "kind": "adhesive_fg"
+      },
+      "product_key": "rm_adhesive_fg",
+      "qty_per_fg": 0.0952,
+      "qty_uom": "kg",
+      "role": "adhesive_fg",
+      "stage_key": "fg"
+    }
+  ],
+  "spec_id": 1604,
+  "spec_surface": {
+    "coverage_pct": 30.0,
+    "print_colors": 2,
+    "printing_required": true,
+    "surface_profile_id": 1,
+    "top_layer_mode_ui": "Roll",
+    "top_sheet_product_id": false
+  },
+  "style_code": "0201",
+  "trace": [
+    {
+      "payload": {
+        "spec_id": 1604,
+        "style_code": "0201"
+      },
+      "step": "compute_started"
+    },
+    {
+      "payload": {
+        "plant_code": "DEFAULT",
+        "plant_name": "",
+        "stages": [
+          "2ply",
+          "board",
+          "fg"
+        ]
+      },
+      "step": "plant_profile_loaded"
+    },
+    {
+      "payload": {
+        "blank_length_mm": 2380.0,
+        "blank_width_mm": 800.0,
+        "style_code": "0201"
+      },
+      "step": "style_resolved"
+    },
+    {
+      "payload": {
+        "diecut_ups": 1,
+        "effective_ups": 1,
+        "printing_ups": 1
+      },
+      "step": "ups_resolved"
+    },
+    {
+      "payload": {
+        "material_flow": [
+          [
+            "2ply",
+            "board",
+            "sfg_board"
+          ],
+          [
+            "board",
+            "fg",
+            "fg_box"
+          ]
+        ],
+        "stages": [
+          "2ply",
+          "board",
+          "fg"
+        ]
+      },
+      "step": "stage_chain_resolved"
+    },
+    {
+      "payload": {
+        "flows": [
+          [
+            "2ply",
+            "board",
+            "sfg_board"
+          ],
+          [
+            "board",
+            "fg",
+            "fg_box"
+          ]
+        ],
+        "stages": [
+          "2ply",
+          "board",
+          "fg"
+        ]
+      },
+      "step": "stage_graph_created"
+    },
+    {
+      "payload": {
+        "diecut_ups": 1,
+        "effective_ups": 1,
+        "kg_per_box": 0.97104,
+        "m2_per_box": 1.904,
+        "printing_ups": 1
+      },
+      "step": "metrics_calculated"
+    },
+    {
+      "payload": {
+        "rm_inputs": [
+          [
+            "liner",
+            "rm_liner",
+            "2ply"
+          ],
+          [
+            "medium",
+            "rm_medium",
+            "2ply"
+          ],
+          [
+            "liner",
+            "rm_liner",
+            "2ply"
+          ],
+          [
+            "adhesive_corrugation",
+            "rm_adhesive_corrugation",
+            "2ply"
+          ],
+          [
+            "adhesive_board",
+            "rm_adhesive_board",
+            "board"
+          ],
+          [
+            "adhesive_fg",
+            "rm_adhesive_fg",
+            "fg"
+          ]
+        ],
+        "rm_inputs_detailed": [
+          {
+            "consumption_type": "area",
+            "metadata": {
+              "gsm": 180.0,
+              "layer_no": 1,
+              "role": "liner",
+              "type": "liner"
+            },
+            "product_key": "rm_liner",
+            "qty_per_fg": 0.34271999999999997,
+            "qty_uom": "kg",
+            "role": "liner",
+            "stage_key": "2ply"
+          },
+          {
+            "consumption_type": "area",
+            "metadata": {
+              "gsm": 150.0,
+              "layer_no": 2,
+              "role": "medium",
+              "type": "medium"
+            },
+            "product_key": "rm_medium",
+            "qty_per_fg": 0.28559999999999997,
+            "qty_uom": "kg",
+            "role": "medium",
+            "stage_key": "2ply"
+          },
+          {
+            "consumption_type": "area",
+            "metadata": {
+              "gsm": 180.0,
+              "layer_no": 3,
+              "role": "liner",
+              "type": "liner"
+            },
+            "product_key": "rm_liner",
+            "qty_per_fg": 0.34271999999999997,
+            "qty_uom": "kg",
+            "role": "liner",
+            "stage_key": "2ply"
+          },
+          {
+            "consumption_type": "area",
+            "metadata": {
+              "factor_kg_per_m2": 0.5,
+              "kind": "adhesive_corrugation"
+            },
+            "product_key": "rm_adhesive_corrugation",
+            "qty_per_fg": 0.952,
+            "qty_uom": "kg",
+            "role": "adhesive_corrugation",
+            "stage_key": "2ply"
+          },
+          {
+            "consumption_type": "area",
+            "metadata": {
+              "factor_kg_per_m2": 0.2,
+              "kind": "adhesive_board"
+            },
+            "product_key": "rm_adhesive_board",
+            "qty_per_fg": 0.3808,
+            "qty_uom": "kg",
+            "role": "adhesive_board",
+            "stage_key": "board"
+          },
+          {
+            "consumption_type": "area",
+            "metadata": {
+              "factor_kg_per_m2": 0.05,
+              "kind": "adhesive_fg"
+            },
+            "product_key": "rm_adhesive_fg",
+            "qty_per_fg": 0.0952,
+            "qty_uom": "kg",
+            "role": "adhesive_fg",
+            "stage_key": "fg"
+          }
+        ],
+        "stages": [
+          "2ply",
+          "board",
+          "fg"
+        ]
+      },
+      "step": "rm_inputs_resolved"
+    },
+    {
+      "payload": {
+        "effective_blank_width_mm": 800.0,
+        "pieces_per_box": 1
+      },
+      "step": "splitting_resolved"
+    },
+    {
+      "payload": {
+        "blanks_per_column": 1,
+        "blanks_per_row": 1,
+        "blanks_per_sheet": 1,
+        "boxes_per_sheet": 1.0,
+        "layout_blanks_per_sheet": 1,
+        "orientation": "normal",
+        "sheet_length_mm": 2380.0,
+        "sheet_usage_percent": 1.0,
+        "sheet_width_mm": 800.0,
+        "waste_percent": 0.0
+      },
+      "step": "layout_resolved"
+    },
+    {
+      "payload": {
+        "layers": [
+          {
+            "gsm": 180.0,
+            "layer_no": 1,
+            "type": "liner"
+          },
+          {
+            "gsm": 150.0,
+            "layer_no": 2,
+            "type": "medium"
+          },
+          {
+            "gsm": 180.0,
+            "layer_no": 3,
+            "type": "liner"
+          }
+        ]
+      },
+      "step": "board_structure_resolved"
+    },
+    {
+      "payload": {
+        "include_waste": false,
+        "total_waste_pct": 0.0
+      },
+      "step": "waste_applied"
+    },
+    {
+      "payload": {
+        "pieces": [],
+        "pieces_per_sheet": 1
+      },
+      "step": "slitting_resolved"
+    }
+  ]
+}

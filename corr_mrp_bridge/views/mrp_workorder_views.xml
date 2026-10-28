@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Replace free-text Operation in MO Work Orders with a controlled dropdown.
+
+             This view customizes the inline Work Orders list used on the
+             Manufacturing Order form (and the main Work Orders tree) so that:
+
+             - The visible "Operation" column is corr_operation_type_id
+               (Many2one to corr.operation.type) instead of the free-text name.
+             - Users cannot quick-create new operations or edit/open from the list.
+             - Work Center options are filtered by the mapped corrugation
+               work centers via the Python-level domain on workcenter_id.
+        -->
+        <record id="corr_mrp_bridge_mrp_production_workorder_tree_editable_view" model="ir.ui.view">
+            <field name="name">mrp.production.work.order.list.editable.corr</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+            <field name="arch" type="xml">
+                <!-- Operation: swap free-text name for corr_operation_type_id dropdown -->
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="corr_operation_type_id"
+                           string="Operation"
+                           options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="column_invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

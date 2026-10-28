@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- Hide Result JSON on spec (Last Compute tab) for non-technical users -->
+    <record id="view_corr_spec_template_form_extras_inherit_bridge" model="ir.ui.view">
+      <field name="name">corr.spec.template.form.extras.inherit.bridge</field>
+      <field name="model">corr.spec.template</field>
+      <field name="inherit_id" ref="corrugation_formula_engine_v2.view_corr_spec_template_form_extras"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='last_result_json']" position="attributes">
+          <attribute name="groups">base.group_system</attribute>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_corr_spec_template_form_plant_selection_bridge" model="ir.ui.view">
+      <field name="name">corr.spec.template.form.plant.selection.bridge</field>
+      <field name="model">corr.spec.template</field>
+      <field name="inherit_id" ref="corr_mrp_bridge.view_corr_spec_template_form_bridge"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[.//field[@name='finishing_line_ids']]" position="after">
+          <group string="Plant Selection">
+            <field name="plant_param_id" required="1"/>
+            <field name="plant_process_waste_pct"/>
+            <field name="plant_flap_basis"/>
+            <field name="plant_flap_fixed_mm"/>
+            <field name="plant_flap_percent"
+                   invisible="plant_flap_basis == 'fixed'"/>
+            <field name="plant_flap_percent_of"
+                   invisible="plant_flap_basis == 'fixed'"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
+

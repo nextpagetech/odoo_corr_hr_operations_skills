@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="access_corr_stage_type_user" model="ir.model.access">
+    <field name="name">corr.stage.type user</field>
+    <field name="model_id" search="[('model', '=', 'corr.stage.type')]"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="0"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0"/>
+  </record>
+
+  <record id="access_corr_stage_type_manager" model="ir.model.access">
+    <field name="name">corr.stage.type manager</field>
+    <field name="model_id" search="[('model', '=', 'corr.stage.type')]"/>
+    <field name="group_id" ref="corrugation_formula_engine_v2.group_corr_manager"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="1"/>
+    <field name="perm_unlink" eval="1"/>
+  </record>
+</odoo>

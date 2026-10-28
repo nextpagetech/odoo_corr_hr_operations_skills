@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_operation_type_list" model="ir.ui.view">
+      <field name="name">corr.operation.type.list</field>
+      <field name="model">corr.operation.type</field>
+      <field name="arch" type="xml">
+        <list string="Operation Types" editable="bottom">
+          <field name="sequence"/>
+          <field name="code"/>
+          <field name="name"/>
+          <field name="company_id" optional="hide"/>
+          <field name="use_in_workorder" optional="show"/>
+          <field name="is_finishing" optional="show"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_operation_type_form" model="ir.ui.view">
+      <field name="name">corr.operation.type.form</field>
+      <field name="model">corr.operation.type</field>
+      <field name="arch" type="xml">
+        <form string="Operation Type">
+          <sheet>
+            <group>
+              <field name="code"/>
+              <field name="name"/>
+              <field name="company_id"/>
+              <field name="use_in_workorder"/>
+              <field name="is_finishing"/>
+              <field name="active"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_corr_operation_type_search" model="ir.ui.view">
+      <field name="name">corr.operation.type.search</field>
+      <field name="model">corr.operation.type</field>
+      <field name="arch" type="xml">
+        <search string="Operation Types">
+          <field name="name"/>
+          <field name="code"/>
+          <filter
+            name="finishing"
+            string="Finishing Operations"
+            domain="[('is_finishing', '=', True)]"
+          />
+          <filter
+            name="non_finishing"
+            string="Non-Finishing"
+            domain="[('is_finishing', '=', False)]"
+          />
+        </search>
+      </field>
+    </record>
+
+    <record id="action_corr_operation_type" model="ir.actions.act_window">
+      <field name="name">Operation Types</field>
+      <field name="res_model">corr.operation.type</field>
+      <field name="view_mode">list,form</field>
+      <field name="context">{}</field>
+    </record>
+
+    <menuitem
+      id="menu_corr_operation_type"
+      name="Operation Types"
+      parent="corr_mrp_bridge.menu_corr_bridge_root"
+      action="corr_mrp_bridge.action_corr_operation_type"
+      sequence="15"
+      groups="corrugation_formula_engine_v2.group_corr_manager"
+    />
+  </data>
+</odoo>

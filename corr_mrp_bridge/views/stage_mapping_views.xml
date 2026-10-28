@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_stage_type_list" model="ir.ui.view">
+      <field name="name">corr.stage.type.list</field>
+      <field name="model">corr.stage.type</field>
+      <field name="arch" type="xml">
+        <list string="Stage Master" editable="bottom">
+          <field name="sequence"/>
+          <field name="code"/>
+          <field name="name"/>
+          <field name="category"/>
+          <field name="default_operation_type_id"/>
+          <field name="default_representation"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_stage_type_form" model="ir.ui.view">
+      <field name="name">corr.stage.type.form</field>
+      <field name="model">corr.stage.type</field>
+      <field name="arch" type="xml">
+        <form string="Stage Master">
+          <sheet>
+            <group>
+              <field name="sequence"/>
+              <field name="code"/>
+              <field name="name"/>
+              <field name="category"/>
+              <field name="default_operation_type_id"/>
+              <field name="default_representation"/>
+              <field name="active"/>
+            </group>
+            <group>
+              <field name="note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_stage_type" model="ir.actions.act_window">
+      <field name="name">Stage Master</field>
+      <field name="res_model">corr.stage.type</field>
+      <field name="view_mode">list,form</field>
+      <field name="context">{}</field>
+    </record>
+
+    <record id="view_corr_stage_mapping_list" model="ir.ui.view">
+      <field name="name">corr.stage.mapping.list</field>
+      <field name="model">corr.stage.mapping</field>
+      <field name="arch" type="xml">
+        <list string="Stage Mappings">
+          <field name="name"/>
+          <field name="code"/>
+          <field name="company_id"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_stage_mapping_form" model="ir.ui.view">
+      <field name="name">corr.stage.mapping.form</field>
+      <field name="model">corr.stage.mapping</field>
+      <field name="arch" type="xml">
+        <form string="Stage Mapping">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="code"/>
+              <field name="company_id"/>
+              <field name="active"/>
+            </group>
+            <group>
+              <field name="note"/>
+            </group>
+            <notebook>
+              <page string="Stages">
+                <field name="line_ids">
+                  <list editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="stage_type_id"/>
+                    <field name="stage_code" optional="hide"/>
+                    <field name="stage_name" optional="hide"/>
+                    <field name="category" optional="hide"/>
+                    <field name="operation_type_id"/>
+                    <field name="enabled"/>
+                    <field name="create_sfg" optional="hide"/>
+                    <field name="is_final_stage" optional="hide"/>
+                    <field name="skip_policy"/>
+                    <field name="merge_into_operation_type_id"/>
+                    <field name="representation"/>
+                    <field name="label_override"/>
+                  </list>
+                  <form string="Stage Line">
+                    <group>
+                      <field name="sequence"/>
+                      <field name="stage_type_id"/>
+                      <field name="stage_code"/>
+                      <field name="stage_name"/>
+                      <field name="category"/>
+                      <field name="operation_type_id"/>
+                      <field name="enabled"/>
+                    </group>
+                    <group>
+                      <field name="create_sfg"/>
+                      <field name="is_final_stage"/>
+                      <field name="skip_policy"/>
+                      <field name="merge_into_operation_type_id"
+                             invisible="skip_policy != 'merge'"/>
+                    </group>
+                    <group>
+                      <field name="representation"/>
+                      <field name="label_override"/>
+                    </group>
+                  </form>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_corr_stage_mapping_search" model="ir.ui.view">
+      <field name="name">corr.stage.mapping.search</field>
+      <field name="model">corr.stage.mapping</field>
+      <field name="arch" type="xml">
+        <search string="Stage Mappings">
+          <field name="name"/>
+          <field name="code"/>
+          <field name="company_id"/>
+          <filter name="active" string="Active" domain="[('active','=',True)]"/>
+          <filter name="inactive" string="Inactive" domain="[('active','=',False)]"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="action_corr_stage_mapping" model="ir.actions.act_window">
+      <field name="name">Stage Mappings</field>
+      <field name="res_model">corr.stage.mapping</field>
+      <field name="view_mode">list,form</field>
+      <field name="view_id" ref="view_corr_stage_mapping_list"/>
+      <field name="search_view_id" ref="view_corr_stage_mapping_search"/>
+      <field name="context">{}</field>
+    </record>
+
+    <menuitem id="menu_corr_stage_mapping"
+              name="Stage Mappings"
+              parent="menu_mrp_corr_bridge_root"
+              action="action_corr_stage_mapping"
+              sequence="10"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+
+    <menuitem id="menu_corr_stage_type"
+              name="Stage Master"
+              parent="menu_mrp_corr_bridge_root"
+              action="action_corr_stage_type"
+              sequence="15"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>

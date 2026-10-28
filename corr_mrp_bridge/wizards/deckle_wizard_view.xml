@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_deckle_wizard" model="ir.ui.view">
+      <field name="name">corr.deckle.wizard.form</field>
+      <field name="model">corr.deckle.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Deckle Planning">
+          <group>
+            <field name="production_id" readonly="1"/>
+          </group>
+          <group string="Result">
+            <field name="result_text" widget="text" readonly="1"/>
+          </group>
+          <footer>
+            <button name="action_plan" string="Plan" type="object" class="btn-primary"/>
+            <button string="Close" special="cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>
+

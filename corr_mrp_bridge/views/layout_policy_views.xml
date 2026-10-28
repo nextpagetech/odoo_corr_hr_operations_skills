@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_engine_layout_policy_tree" model="ir.ui.view">
+      <field name="name">corr.engine.layout.policy.tree</field>
+      <field name="model">corr.engine.layout.policy</field>
+      <field name="arch" type="xml">
+        <list string="Layout Policies">
+          <field name="name"/>
+          <field name="allow_rotation"/>
+          <field name="preferred_ups"/>
+          <field name="max_ups"/>
+          <field name="layout_mode"/>
+          <field name="sheet_source"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_layout_policy_form" model="ir.ui.view">
+      <field name="name">corr.engine.layout.policy.form</field>
+      <field name="model">corr.engine.layout.policy</field>
+      <field name="arch" type="xml">
+        <form string="Layout Policy">
+          <group>
+            <field name="name"/>
+          </group>
+          <group>
+            <field name="allow_rotation"/>
+            <field name="preferred_ups"/>
+            <field name="max_ups"/>
+          </group>
+          <group>
+            <field name="layout_mode"/>
+            <field name="sheet_source"/>
+          </group>
+          <group string="Margins">
+            <field name="trim_margin_mm"/>
+            <field name="gripper_margin_mm"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_layout_policy" model="ir.actions.act_window">
+      <field name="name">Layout Policies</field>
+      <field name="res_model">corr.engine.layout.policy</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="corr_menu_engine_layout_policy"
+              name="Layout Policies"
+              parent="menu_mrp_corr_bridge_root"
+              action="action_corr_engine_layout_policy"
+              sequence="40"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>

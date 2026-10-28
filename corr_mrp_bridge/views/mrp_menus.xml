@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- Manufacturing Corrugation (Bridge) root menu; keep without child Material Mapping -->
+    <menuitem id="menu_mrp_corr_bridge_root"
+              name="Corrugation (Bridge)"
+              parent="mrp.menu_mrp_root"
+              sequence="95"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+
+    <menuitem id="menu_mrp_corr_bridge_engine_admin"
+              name="Engine Administration"
+              parent="menu_mrp_corr_bridge_root"
+              sequence="80"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+
+    <menuitem id="menu_mrp_corr_bridge_debug"
+              name="Diagnostics &amp; Debug"
+              parent="menu_mrp_corr_bridge_root"
+              sequence="90"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>

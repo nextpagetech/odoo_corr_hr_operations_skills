@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_res_config_settings_corr_bridge" model="ir.ui.view">
+      <field name="name">res.config.settings.view.form.inherit.corr.bridge</field>
+      <field name="model">res.config.settings</field>
+      <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//app[@name='general_settings']" position="inside">
+          <block title="Corrugation Bridge (Auto BoM)">
+            <setting id="corr_autobom_enabled">
+              <field name="autobom_enabled"/>
+            </setting>
+            <setting id="corr_autobom_scope">
+              <field name="autobom_scope"/>
+            </setting>
+            <setting id="corr_bulk_upload_use_engine_v2"
+                     string="Bulk Upload Uses Engine V2"
+                     help="Migration flag for product import/create/write auto spec and BoM generation. Disable to keep the legacy corr.spec.template path. Enable to route bulk upload into the native Engine V2 path.">
+              <field name="bulk_upload_use_engine_v2"/>
+            </setting>
+            <setting id="corr_bulk_upload_auto_create_missing_materials"
+                     string="Bulk Upload Auto-creates Missing Material Variants"
+                     help="When enabled, Engine V2 bulk upload creates deterministic missing paper variants from material template, GSM, BF, color, and deckle, then retries BoM generation once.">
+              <field name="bulk_upload_auto_create_missing_materials"/>
+            </setting>
+            <setting id="corr_bulk_upload_auto_create_missing_top_sheets"
+                     string="Bulk Upload Auto-creates Missing Top Sheets"
+                     help="Reserved for safe top-sheet creation when upload rows provide complete product master data. Incomplete top sheet references still fail with a clear result line.">
+              <field name="bulk_upload_auto_create_missing_top_sheets"/>
+            </setting>
+            <!-- Temporarily remove SFG Mode UI binding to avoid upgrade failure when registry misses field load -->
+            <setting id="corr_autobom_defaults" string="Auto BoM Defaults">
+              <div class="content-group">
+                <div class="row mt16">
+                  <label for="corr_include_ops_default" class="col-6 o_light_label"/>
+                  <field name="corr_include_ops_default" class="oe_inline"/>
+                </div>
+                <div class="row mt16">
+                  <label for="corr_include_sfg_default" class="col-6 o_light_label"/>
+                  <field name="corr_include_sfg_default" class="oe_inline"/>
+                </div>
+                <div class="row mt16">
+                  <label for="corr_include_scrap_default" class="col-6 o_light_label"/>
+                  <field name="corr_include_scrap_default" class="oe_inline"/>
+                </div>
+                <div class="row mt16">
+                  <label for="corr_overhead_per_1000_default" class="col-6 o_light_label"/>
+                  <field name="corr_overhead_per_1000_default" class="oe_inline"/>
+                </div>
+              </div>
+            </setting>
+            <setting id="corr_sheet_staging_bmc">
+              <field name="sheet_staging_bmc"/>
+            </setting>
+            <setting id="corr_enable_mto_for_sfg">
+              <field name="enable_mto_for_sfg"/>
+            </setting>
+            <setting id="corr_show_all_chained_mos_in_so_smart_button">
+              <field name="show_all_chained_mos_in_so_smart_button"/>
+            </setting>
+            <setting id="corr_keep_so_created_corr_mos_draft">
+              <field name="keep_so_created_corr_mos_draft"/>
+            </setting>
+            <setting id="corr_engine_v2_current_bom_selection_enabled"
+                     string="Engine V2 Current BoM Selection"
+                     help="When enabled, newly created MOs prefer the product current Engine V2 BoM. Existing MOs keep their original BoM.">
+              <field name="engine_v2_current_bom_selection_enabled"/>
+            </setting>
+            <setting id="corr_assign_workcenter_setting" string="Workcenter Assignment">
+              <div class="content-group">
+                <div class="row mt16">
+                  <label for="corr_assign_workcenter" class="col-6 o_light_label"/>
+                  <field name="corr_assign_workcenter" class="oe_inline"/>
+                </div>
+                <div class="row mt16 text-muted">
+                  <div class="col-12">
+                    Enable to pick workcenters via Operation Map. Disable to force placeholder/unassigned WC.
+                  </div>
+                </div>
+              </div>
+            </setting>
+            <setting id="corr_engine_v2_max_slitting_ups_setting" string="Engine V2 Max Slitting UPS">
+              <div class="content-group">
+                <div class="row mt16">
+                  <label for="corr_engine_v2_max_slitting_ups" class="col-6 o_light_label"/>
+                  <field name="corr_engine_v2_max_slitting_ups" class="oe_inline"/>
+                </div>
+                <div class="row mt16 text-muted">
+                  <div class="col-12">
+                    Global fallback cap for slitting option UPS generation when workcenter-specific limits are not set.
+                  </div>
+                </div>
+              </div>
+            </setting>
+            <setting id="corr_engine_v2_auto_assign_operation_workcenter_setting" string="Engine V2 Operation Workcenter Assignment">
+              <div class="content-group">
+                <div class="row mt16">
+                  <label for="corr_engine_v2_auto_assign_operation_workcenter" class="col-6 o_light_label"/>
+                  <field name="corr_engine_v2_auto_assign_operation_workcenter" class="oe_inline"/>
+                </div>
+                <div class="row mt16 text-muted">
+                  <div class="col-12">
+                    Enable to write compatible resolved workcenters on Engine V2 BoM operations. Disable to leave BoM operation workcenters unassigned.
+                  </div>
+                </div>
+              </div>
+            </setting>
+            <setting id="corr_engine_v2_top_sheet_categories_setting"
+                     string="Engine V2 Top Sheet Categories"
+                     help="Raw Material products in these categories are shown in Engine V2 Top Sheet Product dropdowns. Leave empty to show all Raw Material products.">
+              <field name="corr_engine_v2_top_sheet_category_ids" widget="many2many_tags"/>
+            </setting>
+            <setting id="corr_engine_v2_paper_material_templates_setting"
+                     string="Allowed Paper Material Templates"
+                     help="Only these raw-material product templates can be selected as board-layer paper/material sources in Engine V2 specs.">
+              <field name="corr_engine_v2_allowed_paper_material_template_ids"
+                     widget="many2many_tags"
+                     domain="[('active', '=', True), ('product_role', '=', 'raw_material')]"/>
+            </setting>
+            <setting id="corr_engine_v2_material_attribute_names_setting"
+                     string="Engine V2 Material Attribute Names"
+                     help="Names of Odoo product attributes used when reading GSM, BF, Color, and Deckle from material templates.">
+              <div class="content-group">
+                <div class="row mt16">
+                  <label for="corr_engine_v2_attr_gsm" class="col-6 o_light_label"/>
+                  <field name="corr_engine_v2_attr_gsm" class="oe_inline"/>
+                </div>
+                <div class="row mt16">
+                  <label for="corr_engine_v2_attr_bf" class="col-6 o_light_label"/>
+                  <field name="corr_engine_v2_attr_bf" class="oe_inline"/>
+                </div>
+                <div class="row mt16">
+                  <label for="corr_engine_v2_attr_color" class="col-6 o_light_label"/>
+                  <field name="corr_engine_v2_attr_color" class="oe_inline"/>
+                </div>
+                <div class="row mt16">
+                  <label for="corr_engine_v2_attr_deckle" class="col-6 o_light_label"/>
+                  <field name="corr_engine_v2_attr_deckle" class="oe_inline"/>
+                </div>
+              </div>
+            </setting>
+          </block>
+        </xpath>
+      </field>
+    </record>
+  </data>
+ </odoo>

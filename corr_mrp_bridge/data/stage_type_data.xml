@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+  <record id="corr_stage_type_2ply" model="corr.stage.type">
+    <field name="name">2 Ply Corrugation</field>
+    <field name="code">corr_2ply</field>
+    <field name="sequence">10</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_3ply" model="corr.stage.type">
+    <field name="name">3 Ply Corrugation</field>
+    <field name="code">corr_3ply</field>
+    <field name="sequence">20</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_4ply" model="corr.stage.type">
+    <field name="name">4 Ply Corrugation</field>
+    <field name="code">corr_4ply</field>
+    <field name="sequence">30</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_board" model="corr.stage.type">
+    <field name="name">Board Formation</field>
+    <field name="code">corr_board</field>
+    <field name="sequence">40</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_sheet_print" model="corr.stage.type">
+    <field name="name">Sheet Printing</field>
+    <field name="code">sheet_print</field>
+    <field name="sequence">50</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_sheet_diecut" model="corr.stage.type">
+    <field name="name">Sheet Die Cutting</field>
+    <field name="code">sheet_diecut</field>
+    <field name="sequence">60</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_peel_off" model="corr.stage.type">
+    <field name="name">Peeling</field>
+    <field name="code">peel_off</field>
+    <field name="sequence">70</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_finished_goods" model="corr.stage.type">
+    <field name="name">Finished Goods</field>
+    <field name="code">fg</field>
+    <field name="sequence">80</field>
+    <field name="category">fg</field>
+    <field name="default_representation">operation_only</field>
+  </record>
+  <record id="corr_stage_type_top_sheet_cut" model="corr.stage.type">
+    <field name="name">Top-sheet Cut</field>
+    <field name="code">top_sheet_cut</field>
+    <field name="sequence">90</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_top_sheet_print" model="corr.stage.type">
+    <field name="name">Top-sheet Print</field>
+    <field name="code">top_sheet_print</field>
+    <field name="sequence">100</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_top_sheet_film" model="corr.stage.type">
+    <field name="name">Top-sheet Film</field>
+    <field name="code">top_sheet_film</field>
+    <field name="sequence">110</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_corr_die" model="corr.stage.type">
+    <field name="name">Die-cut</field>
+    <field name="code">corr_die</field>
+    <field name="sequence">120</field>
+    <field name="category">sfg</field>
+  </record>
+  <record id="corr_stage_type_corr_peel" model="corr.stage.type">
+    <field name="name">Peeling</field>
+    <field name="code">corr_peel</field>
+    <field name="sequence">130</field>
+    <field name="category">sfg</field>
+  </record>
+</odoo>

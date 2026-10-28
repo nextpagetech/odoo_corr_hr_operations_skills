@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mrp_unplan_list_button.action_mrp_production_confirm_server" model="ir.actions.server">
+            <field name="code">
+if records:
+    res = records.filtered(lambda mo: mo.state == 'draft').action_confirm()
+    action = res if isinstance(res, dict) else False
+else:
+    action = False
+            </field>
+        </record>
+
+        <record id="view_mrp_production_tree_so_smart" model="ir.ui.view">
+            <field name="name">mrp.production.list.corr.so.smart.disabled</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="active">False</field>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="attributes">
+                    <attribute name="sample">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

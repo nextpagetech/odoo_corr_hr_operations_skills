@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_engine_board_recipe_tree" model="ir.ui.view">
+      <field name="name">corr.engine.board.recipe.tree</field>
+      <field name="model">corr.engine.board.recipe</field>
+      <field name="arch" type="xml">
+        <list string="Board Recipes">
+          <field name="code"/>
+          <field name="name"/>
+          <field name="ply_type"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_board_recipe_form" model="ir.ui.view">
+      <field name="name">corr.engine.board.recipe.form</field>
+      <field name="model">corr.engine.board.recipe</field>
+      <field name="arch" type="xml">
+        <form string="Board Recipe">
+          <group>
+            <field name="code"/>
+            <field name="name"/>
+            <field name="ply_type"/>
+            <field name="active"/>
+          </group>
+          <group string="Layers">
+            <field name="line_ids">
+              <list editable="bottom" string="Layers">
+                <field name="allowed_material_template_ids" column_invisible="1"/>
+                <field name="allowed_gsm_value_ids" column_invisible="1"/>
+                <field name="allowed_bf_value_ids" column_invisible="1"/>
+                <field name="allowed_color_value_ids" column_invisible="1"/>
+                <field name="sequence"/>
+                <field name="role"/>
+                <field name="material_template_id"/>
+                <field name="gsm_value_id" context="{'show_attribute': False}"/>
+                <field name="bf_value_id" context="{'show_attribute': False}"/>
+                <field name="color_value_id" context="{'show_attribute': False}"/>
+                <field name="flute_type_id"/>
+                <field name="resolved_product_id" readonly="1"/>
+                <field name="resolution_message" readonly="1" optional="hide"/>
+                <field name="gsm" optional="hide"/>
+                <field name="bf" optional="hide"/>
+                <field name="color" optional="hide"/>
+                <field name="material_product_id"/>
+              </list>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_board_recipe" model="ir.actions.act_window">
+      <field name="name">Board Recipes</field>
+      <field name="res_model">corr.engine.board.recipe</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="corr_menu_engine_board_recipe"
+              name="Board Recipes"
+              parent="menu_mrp_corr_bridge_root"
+              action="action_corr_engine_board_recipe"
+              sequence="20"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>

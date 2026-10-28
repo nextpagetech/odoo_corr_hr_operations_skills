@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_product_template_form_corr_autobom_diag" model="ir.ui.view">
+    <field name="name">product.template.form.corr.autobom.diag</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+      <xpath expr="//sheet/notebook" position="inside">
+        <page string="Corr Auto BoM Diagnostics" groups="base.group_system">
+          <group>
+            <group>
+              <field name="corr_autobom_backend" readonly="1"/>
+              <field name="corr_autobom_status" readonly="1"/>
+              <field name="corr_autobom_error_stage" readonly="1"/>
+              <field name="corr_autobom_last_run_at" readonly="1"/>
+            </group>
+            <group>
+              <field name="corr_autobom_spec_id" readonly="1"/>
+              <field name="corr_current_engine_v2_bom_id" readonly="1"/>
+              <field name="corr_autobom_preview_status" readonly="1"/>
+              <field name="corr_autobom_bom_status" readonly="1"/>
+              <field name="corr_autobom_skip"/>
+            </group>
+          </group>
+          <group>
+            <field name="corr_autobom_message" readonly="1" nolabel="1" placeholder="No diagnostics recorded."/>
+          </group>
+          <group>
+            <field name="corr_autobom_error_payload" readonly="1" nolabel="1" widget="text"/>
+          </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="product_import_alias_product_name" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">product name</field>
+        <field name="field_name">name</field>
+    </record>
+    <record id="product_import_alias_product_code" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">product code</field>
+        <field name="field_name">default_code</field>
+    </record>
+    <record id="product_import_alias_product_type" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">product type</field>
+        <field name="field_name">type</field>
+    </record>
+    <record id="product_import_alias_sale_ok" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">can be sold</field>
+        <field name="field_name">sale_ok</field>
+    </record>
+    <record id="product_import_alias_purchase_ok" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">can be purchased</field>
+        <field name="field_name">purchase_ok</field>
+    </record>
+    <record id="product_import_alias_sales_price" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">sales price</field>
+        <field name="field_name">list_price</field>
+    </record>
+    <record id="product_import_alias_cost" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">cost</field>
+        <field name="field_name">standard_price</field>
+    </record>
+    <record id="product_import_alias_barcode" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">barcode</field>
+        <field name="field_name">barcode</field>
+    </record>
+    <record id="product_import_alias_category" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">category</field>
+        <field name="field_name">import_categ_name</field>
+    </record>
+    <record id="product_import_alias_uom" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">uom</field>
+        <field name="field_name">import_uom_name</field>
+    </record>
+    <record id="product_import_alias_style_fefco" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">style / fefco</field>
+        <field name="field_name">corr_style</field>
+    </record>
+    <record id="product_import_alias_style_code" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">style code</field>
+        <field name="field_name">corr_style</field>
+    </record>
+    <record id="product_import_alias_style_fefco_no_slash" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">style fefco</field>
+        <field name="field_name">corr_style</field>
+    </record>
+    <record id="product_import_alias_fefco_style" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">fefco style</field>
+        <field name="field_name">corr_style</field>
+    </record>
+    <record id="product_import_alias_corr_style_code" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">corr_style_code</field>
+        <field name="field_name">corr_style</field>
+    </record>
+    <record id="product_import_alias_sheet_length" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">sheet length (mm)</field>
+        <field name="field_name">corr_length_mm</field>
+    </record>
+    <record id="product_import_alias_sheet_width" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">sheet width (mm)</field>
+        <field name="field_name">corr_width_mm</field>
+    </record>
+    <record id="product_import_alias_sheet_height" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">sheet height (mm)</field>
+        <field name="field_name">corr_height_mm</field>
+    </record>
+    <record id="product_import_alias_ply_count" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">ply count</field>
+        <field name="field_name">corr_ply_count</field>
+    </record>
+    <record id="product_import_alias_plant" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">plant</field>
+        <field name="field_name">corr_plant_code</field>
+    </record>
+    <record id="product_import_alias_routing_profile" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">routing profile</field>
+        <field name="field_name">corr_routing_profile_code</field>
+    </record>
+    <record id="product_import_alias_board_recipe" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">board recipe</field>
+        <field name="field_name">corr_board_recipe_code</field>
+    </record>
+    <record id="product_import_alias_fg_per_sheet" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">fg per sheet</field>
+        <field name="field_name">corr_fg_per_sheet</field>
+    </record>
+    <record id="product_import_alias_top_sheet_mode" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">top sheet mode</field>
+        <field name="field_name">corr_top_layer_mode</field>
+    </record>
+    <record id="product_import_alias_top_sheet_product_code" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">top sheet product code</field>
+        <field name="field_name">corr_top_sheet_code</field>
+    </record>
+    <record id="product_import_alias_top_sheet_roll_code" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">top sheet roll code</field>
+        <field name="field_name">corr_top_sheet_roll_code</field>
+    </record>
+    <record id="product_import_alias_forced_ups" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">forced ups</field>
+        <field name="field_name">corr_forced_ups</field>
+    </record>
+    <record id="product_import_alias_printing_required" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">printing required</field>
+        <field name="field_name">corr_printing_required</field>
+    </record>
+    <record id="product_import_alias_print_colors" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">print colors</field>
+        <field name="field_name">corr_print_colors</field>
+    </record>
+    <record id="product_import_alias_coverage_pct" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">coverage %</field>
+        <field name="field_name">corr_coverage_pct</field>
+    </record>
+    <record id="product_import_alias_lamination_code" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">lamination code</field>
+        <field name="field_name">corr_lamination_code</field>
+    </record>
+    <record id="product_import_alias_locking_code" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">locking code</field>
+        <field name="field_name">corr_locking_code</field>
+    </record>
+    <record id="product_import_alias_dimensions_mode" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">dimensions mode</field>
+        <field name="field_name">corr_dimensions_mode</field>
+    </record>
+    <record id="product_import_alias_printing_ups" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">printing ups</field>
+        <field name="field_name">corr_printing_ups</field>
+    </record>
+    <record id="product_import_alias_liner_slitting_ups" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">liner slitting ups</field>
+        <field name="field_name">corr_liner_slitting_ups</field>
+    </record>
+    <record id="product_import_alias_sheet_waste_pct" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">sheet waste %</field>
+        <field name="field_name">corr_sheet_waste_pct</field>
+    </record>
+    <record id="product_import_alias_setup_sheets" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">setup sheets</field>
+        <field name="field_name">corr_setup_sheets</field>
+    </record>
+    <record id="product_import_alias_pack_size" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">pack size</field>
+        <field name="field_name">corr_pack_size</field>
+    </record>
+    <record id="product_import_alias_round_to_pack" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">round to pack</field>
+        <field name="field_name">corr_round_to_pack</field>
+    </record>
+    <record id="product_import_alias_print_band_mm" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">print band (mm)</field>
+        <field name="field_name">corr_print_band_mm</field>
+    </record>
+    <record id="product_import_alias_adhesive_factor_top_sheet" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">adhesive factor top sheet</field>
+        <field name="field_name">corr_adhesive_factor_top_sheet</field>
+    </record>
+    <record id="product_import_alias_skip_autobom" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">skip auto bom</field>
+        <field name="field_name">corr_autobom_skip</field>
+    </record>
+    <record id="product_import_alias_sales_tax_rate" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">sales tax rate</field>
+        <field name="field_name">sales_tax_rate</field>
+    </record>
+    <record id="product_import_alias_sales_tax_price_included" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">sales tax price included</field>
+        <field name="field_name">sales_tax_price_included</field>
+    </record>
+    <record id="product_import_alias_purchase_tax_rate" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">purchase tax rate</field>
+        <field name="field_name">purchase_tax_rate</field>
+    </record>
+    <record id="product_import_alias_purchase_tax_price_included" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">purchase tax price included</field>
+        <field name="field_name">purchase_tax_price_included</field>
+    </record>
+    <record id="product_import_alias_diecut_codes" model="base_import.mapping">
+        <field name="res_model">product.template</field>
+        <field name="column_name">diecut codes</field>
+        <field name="field_name">diecut_codes</field>
+    </record>
+
+    <record id="product_import_alias_layer_1_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 1 role</field><field name="field_name">corr_layer1_role</field></record>
+    <record id="product_import_alias_layer_1_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 1 gsm</field><field name="field_name">corr_layer1_gsm</field></record>
+    <record id="product_import_alias_layer_1_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 1 bf</field><field name="field_name">corr_layer1_bf</field></record>
+    <record id="product_import_alias_layer_1_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 1 color</field><field name="field_name">corr_layer1_color</field></record>
+    <record id="product_import_alias_layer_1_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 1 material</field><field name="field_name">corr_layer1_material_template</field></record>
+    <record id="product_import_alias_layer_1_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 1 flute</field><field name="field_name">corr_layer1_flute_code</field></record>
+    <record id="product_import_alias_layer_2_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 2 role</field><field name="field_name">corr_layer2_role</field></record>
+    <record id="product_import_alias_layer_2_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 2 gsm</field><field name="field_name">corr_layer2_gsm</field></record>
+    <record id="product_import_alias_layer_2_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 2 bf</field><field name="field_name">corr_layer2_bf</field></record>
+    <record id="product_import_alias_layer_2_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 2 color</field><field name="field_name">corr_layer2_color</field></record>
+    <record id="product_import_alias_layer_2_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 2 material</field><field name="field_name">corr_layer2_material_template</field></record>
+    <record id="product_import_alias_layer_2_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 2 flute</field><field name="field_name">corr_layer2_flute_code</field></record>
+    <record id="product_import_alias_layer_3_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 3 role</field><field name="field_name">corr_layer3_role</field></record>
+    <record id="product_import_alias_layer_3_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 3 gsm</field><field name="field_name">corr_layer3_gsm</field></record>
+    <record id="product_import_alias_layer_3_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 3 bf</field><field name="field_name">corr_layer3_bf</field></record>
+    <record id="product_import_alias_layer_3_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 3 color</field><field name="field_name">corr_layer3_color</field></record>
+    <record id="product_import_alias_layer_3_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 3 material</field><field name="field_name">corr_layer3_material_template</field></record>
+    <record id="product_import_alias_layer_3_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 3 flute</field><field name="field_name">corr_layer3_flute_code</field></record>
+    <record id="product_import_alias_layer_4_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 4 role</field><field name="field_name">corr_layer4_role</field></record>
+    <record id="product_import_alias_layer_4_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 4 gsm</field><field name="field_name">corr_layer4_gsm</field></record>
+    <record id="product_import_alias_layer_4_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 4 bf</field><field name="field_name">corr_layer4_bf</field></record>
+    <record id="product_import_alias_layer_4_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 4 color</field><field name="field_name">corr_layer4_color</field></record>
+    <record id="product_import_alias_layer_4_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 4 material</field><field name="field_name">corr_layer4_material_template</field></record>
+    <record id="product_import_alias_layer_4_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 4 flute</field><field name="field_name">corr_layer4_flute_code</field></record>
+    <record id="product_import_alias_layer_5_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 5 role</field><field name="field_name">corr_layer5_role</field></record>
+    <record id="product_import_alias_layer_5_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 5 gsm</field><field name="field_name">corr_layer5_gsm</field></record>
+    <record id="product_import_alias_layer_5_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 5 bf</field><field name="field_name">corr_layer5_bf</field></record>
+    <record id="product_import_alias_layer_5_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 5 color</field><field name="field_name">corr_layer5_color</field></record>
+    <record id="product_import_alias_layer_5_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 5 material</field><field name="field_name">corr_layer5_material_template</field></record>
+    <record id="product_import_alias_layer_5_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 5 flute</field><field name="field_name">corr_layer5_flute_code</field></record>
+    <record id="product_import_alias_layer_6_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 6 role</field><field name="field_name">corr_layer6_role</field></record>
+    <record id="product_import_alias_layer_6_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 6 gsm</field><field name="field_name">corr_layer6_gsm</field></record>
+    <record id="product_import_alias_layer_6_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 6 bf</field><field name="field_name">corr_layer6_bf</field></record>
+    <record id="product_import_alias_layer_6_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 6 color</field><field name="field_name">corr_layer6_color</field></record>
+    <record id="product_import_alias_layer_6_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 6 material</field><field name="field_name">corr_layer6_material_template</field></record>
+    <record id="product_import_alias_layer_6_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 6 flute</field><field name="field_name">corr_layer6_flute_code</field></record>
+    <record id="product_import_alias_layer_7_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 7 role</field><field name="field_name">corr_layer7_role</field></record>
+    <record id="product_import_alias_layer_7_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 7 gsm</field><field name="field_name">corr_layer7_gsm</field></record>
+    <record id="product_import_alias_layer_7_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 7 bf</field><field name="field_name">corr_layer7_bf</field></record>
+    <record id="product_import_alias_layer_7_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 7 color</field><field name="field_name">corr_layer7_color</field></record>
+    <record id="product_import_alias_layer_7_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 7 material</field><field name="field_name">corr_layer7_material_template</field></record>
+    <record id="product_import_alias_layer_7_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 7 flute</field><field name="field_name">corr_layer7_flute_code</field></record>
+    <record id="product_import_alias_layer_8_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 8 role</field><field name="field_name">corr_layer8_role</field></record>
+    <record id="product_import_alias_layer_8_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 8 gsm</field><field name="field_name">corr_layer8_gsm</field></record>
+    <record id="product_import_alias_layer_8_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 8 bf</field><field name="field_name">corr_layer8_bf</field></record>
+    <record id="product_import_alias_layer_8_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 8 color</field><field name="field_name">corr_layer8_color</field></record>
+    <record id="product_import_alias_layer_8_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 8 material</field><field name="field_name">corr_layer8_material_template</field></record>
+    <record id="product_import_alias_layer_8_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 8 flute</field><field name="field_name">corr_layer8_flute_code</field></record>
+    <record id="product_import_alias_layer_9_role" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 9 role</field><field name="field_name">corr_layer9_role</field></record>
+    <record id="product_import_alias_layer_9_gsm" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 9 gsm</field><field name="field_name">corr_layer9_gsm</field></record>
+    <record id="product_import_alias_layer_9_bf" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 9 bf</field><field name="field_name">corr_layer9_bf</field></record>
+    <record id="product_import_alias_layer_9_color" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 9 color</field><field name="field_name">corr_layer9_color</field></record>
+    <record id="product_import_alias_layer_9_material" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 9 material</field><field name="field_name">corr_layer9_material_template</field></record>
+    <record id="product_import_alias_layer_9_flute" model="base_import.mapping"><field name="res_model">product.template</field><field name="column_name">layer 9 flute</field><field name="field_name">corr_layer9_flute_code</field></record>
+</odoo>

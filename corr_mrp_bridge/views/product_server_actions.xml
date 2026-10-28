@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Server Action: Generate Corr BoMs for selected products -->
+    <record id="ir_actions_server_corr_autobom_batch" model="ir.actions.server">
+        <field name="name">Generate Corr BoMs (from Spec)</field>
+        <field name="model_id" ref="product.model_product_template"/>
+        <field name="binding_model_id" ref="product.model_product_template"/>
+        <field name="binding_type">action</field>
+        <field name="state">code</field>
+        <field name="code">records.action_corr_generate_boms()</field>
+        <field name="help">Regenerate/Update BoMs from corrugation specs for selected products. Uses system defaults for operations/SFG/scrap.</field>
+    </record>
+</odoo>

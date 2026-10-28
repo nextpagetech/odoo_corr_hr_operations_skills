@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_mrp_workcenter_corr_rules" model="ir.ui.view">
+      <field name="name">mrp.workcenter.form.inherit.corr.rules</field>
+      <field name="model">mrp.workcenter</field>
+      <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form//group[1]" position="inside">
+          <group string="Corrugation Routing">
+            <field name="corr_flutes_supported" placeholder="e.g., B,F"/>
+            <field name="corr_deckle_min_cm"/>
+            <field name="corr_deckle_max_cm"/>
+            <field name="corr_length_min_cm"/>
+            <field name="corr_length_max_cm"/>
+            <field name="corr_length_min_mm" invisible="1"/>
+            <field name="corr_length_max_mm" invisible="1"/>
+            <field name="max_slitting_ups"/>
+            <field name="corr_lamination_top_only"/>
+            <field name="corr_is_placeholder"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Add corrugation fields to Work Center tree for XLSX exports -->
+    <record id="view_mrp_workcenter_corr_tree_cols" model="ir.ui.view">
+      <field name="name">mrp.workcenter.list.inherit.corr.columns</field>
+      <field name="model">mrp.workcenter</field>
+      <field name="inherit_id" ref="mrp.mrp_workcenter_tree_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//list" position="inside">
+          <field name="corr_flutes_supported" optional="show"/>
+          <field name="corr_deckle_min_cm" optional="show"/>
+          <field name="corr_deckle_max_cm" optional="show"/>
+          <field name="corr_length_min_cm" optional="show"/>
+          <field name="corr_length_max_cm" optional="show"/>
+          <field name="max_slitting_ups" optional="show"/>
+          <field name="corr_lamination_top_only" optional="show"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

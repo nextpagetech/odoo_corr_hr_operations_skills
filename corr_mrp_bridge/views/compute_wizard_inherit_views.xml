@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- Hide Raw JSON on compute wizard for non-technical users -->
+    <record id="view_corr_compute_wizard_form_inherit_bridge" model="ir.ui.view">
+      <field name="name">corr.compute.wizard.form.inherit.bridge</field>
+      <field name="model">corr.compute.wizard</field>
+      <field name="inherit_id" ref="corrugation_formula_engine_v2.view_corr_compute_wizard_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='result_json']" position="attributes">
+          <attribute name="groups">base.group_system</attribute>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
+

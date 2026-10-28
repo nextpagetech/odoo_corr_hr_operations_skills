@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Dedicated SFG search views with richer filters / group-by -->
+
+        <record id="corr_sfg_product_template_search_view" model="ir.ui.view">
+            <field name="name">corr.sfg.product.template.search</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_search_form_view_stock"/>
+            <field name="arch" type="xml">
+                <!-- Add extra group-by options inside the main Group By block (identified by existing 'type' filter) -->
+                <xpath expr="//group[filter[@name='type']]" position="inside">
+                    <filter string="Stage Type" name="group_stage_type" context="{'group_by': 'stage_type_id'}"/>
+                    <filter string="Legacy Stage" name="group_corr_stage" context="{'group_by': 'corr_stage'}"/>
+                    <filter string="Company" name="group_company" context="{'group_by': 'company_id'}"/>
+                </xpath>
+                <!-- Add extra filters for SFG inventory analysis after the Archived filter -->
+                <xpath expr="//filter[@name='inactive']" position="after">
+                    <filter string="On Hand &gt; 0" name="sfg_on_hand"
+                            domain="[('qty_available', '&gt;', 0)]"/>
+                    <filter string="Reserved &gt; 0" name="sfg_reserved"
+                            domain="[('outgoing_qty', '&gt;', 0)]"/>
+                    <filter string="Archived" name="sfg_archived"
+                            domain="[('active', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="corr_sfg_product_product_search_view" model="ir.ui.view">
+            <field name="name">corr.sfg.product.product.search</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="stock.stock_product_search_form_view"/>
+            <field name="arch" type="xml">
+                <!-- Group-by additions: use the Group By block identified by existing 'type' filter -->
+                <xpath expr="//group[filter[@name='type']]" position="inside">
+                    <filter string="Stage Type" name="group_stage_type" context="{'group_by': 'stage_type_id'}"/>
+                    <filter string="Company" name="group_company" context="{'group_by': 'company_id'}"/>
+                </xpath>
+                <!-- Extra filters after Archived -->
+                <xpath expr="//filter[@name='inactive']" position="after">
+                    <filter string="On Hand &gt; 0" name="sfg_on_hand"
+                            domain="[('qty_available', '&gt;', 0)]"/>
+                    <filter string="Archived" name="sfg_archived"
+                            domain="[('active', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Quant search: SFG-specific grouping and filters -->
+        <record id="corr_sfg_quant_search_view" model="ir.ui.view">
+            <field name="name">corr.sfg.stock.quant.search</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.quant_search_view"/>
+            <field name="arch" type="xml">
+                <!-- Extra filter inside the main Filters group: anchor after Reservations -->
+                <xpath expr="//filter[@name='reserved']" position="after">
+                    <filter string="Archived Products" name="sfg_archived_products"
+                            domain="[('product_id.active', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- 3) SFG-specific actions and menus under Inventory -->
+
+        <!-- SFG Products (templates) -->
+        <record id="corr_sfg_product_template_action" model="ir.actions.act_window">
+            <field name="name">SFG Products</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="search_view_id" ref="corr_sfg_product_template_search_view"/>
+            <field name="domain">[('product_role', '=', 'sfg'), ('is_storable', '=', True)]</field>
+            <field name="context">{'default_is_storable': True, 'default_product_role': 'sfg'}</field>
+        </record>
+
+        <!-- SFG Product Variants -->
+        <record id="corr_sfg_product_product_action" model="ir.actions.act_window">
+            <field name="name">SFG Variants</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="search_view_id" ref="corr_sfg_product_product_search_view"/>
+            <field name="domain">[('product_role', '=', 'sfg'), ('is_storable', '=', True)]</field>
+            <field name="context">{'default_is_storable': True}</field>
+        </record>
+
+        <!-- SFG Stock (quants) -->
+        <record id="corr_sfg_stock_quant_action" model="ir.actions.act_window">
+            <field name="name">SFG Stock</field>
+            <field name="res_model">stock.quant</field>
+            <field name="view_mode">list,form,pivot,graph</field>
+            <field name="view_id" ref="stock.view_stock_quant_tree"/>
+            <field name="search_view_id" ref="corr_sfg_quant_search_view"/>
+            <field name="domain">[('product_id.product_tmpl_id.product_role', '=', 'sfg')]</field>
+            <field name="context">
+                {'search_default_internal_loc': 1,
+                 'search_default_in_stock': 1}
+            </field>
+        </record>
+
+        <!-- Optional: SFG Moves (stock.move) -->
+        <record id="corr_sfg_stock_move_action" model="ir.actions.act_window">
+            <field name="name">SFG Moves</field>
+            <field name="res_model">stock.move</field>
+            <field name="view_mode">list,form,pivot,graph</field>
+            <field name="domain">[('product_id.product_tmpl_id.product_role', '=', 'sfg')]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- Menus under Inventory -> Products -->
+        <menuitem id="corr_menu_sfg_inventory_root"
+                  name="Semi-Finished Inventory"
+                  parent="stock.menu_stock_inventory_control"
+                  sequence="50"/>
+
+        <menuitem id="corr_menu_sfg_products_templates"
+                  name="SFG Products"
+                  parent="corr_menu_sfg_inventory_root"
+                  action="corr_sfg_product_template_action"
+                  sequence="10"/>
+
+        <menuitem id="corr_menu_sfg_products_variants"
+                  name="SFG Variants"
+                  parent="corr_menu_sfg_inventory_root"
+                  action="corr_sfg_product_product_action"
+                  groups="product.group_product_variant"
+                  sequence="20"/>
+
+        <menuitem id="corr_menu_sfg_stock_quants"
+                  name="SFG Stock"
+                  parent="corr_menu_sfg_inventory_root"
+                  action="corr_sfg_stock_quant_action"
+                  sequence="30"/>
+
+        <menuitem id="corr_menu_sfg_stock_moves"
+                  name="SFG Moves"
+                  parent="corr_menu_sfg_inventory_root"
+                  action="corr_sfg_stock_move_action"
+                  sequence="40"/>
+
+        <!-- 4) Hide SFGs from default Inventory product actions by domain -->
+        <function model="ir.actions.act_window" name="write">
+            <value eval="[ref('stock.product_template_action_product')]"/>
+            <value eval="{'domain': [('product_role', '!=', 'sfg')]}"/>
+        </function>
+
+        <function model="ir.actions.act_window" name="write">
+            <value eval="[ref('stock.stock_product_normal_action')]"/>
+            <value eval="{'domain': [('product_role', '!=', 'sfg')]}"/>
+        </function>
+    </data>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_engine_routing_profile_tree" model="ir.ui.view">
+      <field name="name">corr.engine.routing.profile.tree</field>
+      <field name="model">corr.engine.routing.profile</field>
+      <field name="arch" type="xml">
+        <list string="Routing Profiles">
+          <field name="name"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_engine_routing_profile_form" model="ir.ui.view">
+      <field name="name">corr.engine.routing.profile.form</field>
+      <field name="model">corr.engine.routing.profile</field>
+      <field name="arch" type="xml">
+        <form string="Routing Profile">
+          <group>
+            <field name="name"/>
+            <field name="active"/>
+          </group>
+          <group string="Stages">
+            <field name="stage_ids">
+              <list editable="bottom" string="Stages">
+                <field name="sequence"/>
+                <field name="stage_code"/>
+                <field name="stage_type"/>
+                <field name="waste_percent"/>
+              </list>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_engine_routing_profile" model="ir.actions.act_window">
+      <field name="name">Routing Profiles</field>
+      <field name="res_model">corr.engine.routing.profile</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="corr_menu_engine_routing_profile"
+              name="Routing Profiles"
+              parent="menu_mrp_corr_bridge_root"
+              action="action_corr_engine_routing_profile"
+              sequence="50"
+              groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>

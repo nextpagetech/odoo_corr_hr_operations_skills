@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_spec_template_form_bridge" model="ir.ui.view">
+      <field name="name">corr.spec.template.form.bridge</field>
+      <field name="model">corr.spec.template</field>
+      <field name="inherit_id" ref="corrugation_formula_engine_v2.view_corr_spec_template_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header" position="inside">
+          <button name="action_open_bom_wizard" type="object" string="Create/Update BoM" class="btn-secondary" groups="corrugation_formula_engine_v2.group_corr_manager"/>
+        </xpath>
+        <xpath expr="//field[@name='top_sheet_product_id']" position="attributes">
+          <attribute name="optional">show</attribute>
+        </xpath>
+        <xpath expr="//field[@name='top_sheet_code']" position="attributes">
+          <attribute name="optional">show</attribute>
+        </xpath>
+        <xpath expr="//field[@name='top_layer_mode_ui']" position="after">
+          <field name="top_sheet_roll_code"/>
+        </xpath>
+        <!-- Optional Surface Profile selector; spec retains final values -->
+        <xpath expr="//field[@name='coverage_pct']" position="after">
+          <field name="surface_profile_id"/>
+        </xpath>
+
+        <!-- Finishing configuration after Die-cut (Peeling).
+
+             The base corr.spec.template form does not use a notebook,
+             so we inject the finishing configuration directly into the
+             main sheet instead of adding a new page.
+        -->
+        <xpath expr="//sheet" position="inside">
+          <group string="Finishing">
+            <field name="finishing_line_ids" nolabel="1">
+              <list editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="op_code"/>
+              </list>
+            </field>
+          </group>
+          <group string="Staging">
+            <field name="corr_sfg_mode"/>
+            <field name="corr_corr_stage_mode"/>
+          </group>
+          <div class="o_form_label">
+            If finishing operations are set, they define the post-peeling flow;
+            otherwise default locking applies.
+          </div>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

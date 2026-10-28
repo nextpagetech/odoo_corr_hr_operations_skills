@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <!-- Product Template header button -->
+    <record id="view_product_template_form_corr_button" model="ir.ui.view">
+      <field name="name">product.template.form.corr.button</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header" position="inside">
+          <button name="action_corr_compute_preview" type="object" string="Spec Details" class="btn-secondary" groups="base.group_user"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- MO header buttons -->
+    <record id="view_mrp_production_form_corr_buttons" model="ir.ui.view">
+      <field name="name">mrp.production.form.corr.buttons</field>
+      <field name="model">mrp.production</field>
+      <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//form/header" position="inside">
+          <button name="action_corr_compute_preview" type="object" string="Corr Preview" class="btn-secondary" groups="base.group_user"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

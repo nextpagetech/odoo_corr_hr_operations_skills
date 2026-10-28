@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_missing_kraft_variant_wizard" model="ir.ui.view">
+      <field name="name">corr.missing.kraft.variant.wizard.form</field>
+      <field name="model">corr.missing.kraft.variant.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Missing Variants">
+          <sheet>
+            <group>
+              <field name="product_template_id" readonly="1" options="{'no_open': True}"/>
+              <field name="return_wizard_id" invisible="1"/>
+            </group>
+            <field name="line_ids" nolabel="1">
+              <list editable="bottom" create="1" delete="1">
+                <field name="deckle"/>
+                <field name="color"/>
+                <field name="gsm"/>
+                <field name="bf"/>
+              </list>
+            </field>
+          </sheet>
+          <footer>
+            <button name="action_create_variants"
+                    string="Create Variants"
+                    type="object"
+                    class="btn-primary"/>
+            <button name="action_cancel"
+                    string="Cancel"
+                    type="object"
+                    class="btn-secondary"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_missing_kraft_variant_wizard" model="ir.actions.act_window">
+      <field name="name">Missing Variants</field>
+      <field name="res_model">corr.missing.kraft.variant.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_corr_missing_kraft_variant_wizard"/>
+      <field name="target">new</field>
+    </record>
+  </data>
+</odoo>

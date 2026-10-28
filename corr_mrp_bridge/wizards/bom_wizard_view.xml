@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_bom_generate_wizard" model="ir.ui.view">
+      <field name="name">corr.bom.generate.wizard.form</field>
+      <field name="model">corr.bom.generate.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Create/Update BoM">
+          <group>
+            <field name="spec_id" readonly="1"/>
+            <field name="target_product_tmpl_id"/>
+            <field name="remove_obsolete"/>
+            <field name="include_operations"/>
+            <field name="include_waste_in_bom"/>
+            <field name="include_scrap_byproduct"/>
+            <field name="overhead_per_1000"/>
+          </group>
+          <group string="Debug (read-only)" groups="base.group_system">
+            <field name="debug_mode_label" readonly="1"/>
+            <field name="debug_style" readonly="1"/>
+            <field name="debug_printing_ups" readonly="1"/>
+            <field name="debug_flag_enabled" readonly="1"/>
+            <field name="debug_sheet_flag" readonly="1"/>
+            <field name="debug_fg_base_qty_target" readonly="1"/>
+            <field name="debug_board_top_sheet_qty" readonly="1"/>
+            <field name="debug_stage_text" readonly="1" widget="text"/>
+          </group>
+          <group string="Preview" col="4">
+            <field name="has_missing_variants" invisible="1"/>
+            <field name="missing_variant_payload" invisible="1"/>
+            <field name="preview" widget="text" readonly="1" colspan="3"/>
+            <button name="action_open_missing_variants"
+                    string="Missing Variants"
+                    type="object"
+                    class="btn-primary"
+                    invisible="not has_missing_variants"/>
+          </group>
+          <group string="Missing Mappings">
+            <field name="missing_mappings" widget="text" readonly="1"/>
+          </group>
+          <footer>
+            <button name="action_prepare" string="Refresh Preview" type="object" class="btn-secondary"/>
+            <button name="action_apply" string="Apply" type="object" class="btn-primary"/>
+            <button string="Close" special="cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

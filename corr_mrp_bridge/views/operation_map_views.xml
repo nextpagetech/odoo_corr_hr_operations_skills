@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_corr_operation_map_list" model="ir.ui.view">
+      <field name="name">corr.operation.map.list</field>
+      <field name="model">corr.operation.map</field>
+      <field name="arch" type="xml">
+        <list string="Operation Mapping" editable="bottom">
+          <field name="sequence"/>
+          <field name="op_name"/>
+          <field name="workcenter_id"/>
+          <field name="setup_min"/>
+          <field name="speed_basis"/>
+          <field name="base_speed"/>
+          <field name="speed_units_per_hour" optional="hide"/>
+          <field name="active"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="view_corr_operation_map_form" model="ir.ui.view">
+      <field name="name">corr.operation.map.form</field>
+      <field name="model">corr.operation.map</field>
+      <field name="arch" type="xml">
+        <form string="Operation Mapping">
+          <group>
+            <field name="sequence"/>
+            <field name="op_name"/>
+            <field name="workcenter_id"/>
+          </group>
+          <group>
+            <field name="setup_min"/>
+            <field name="speed_basis"/>
+            <field name="base_speed"/>
+            <field name="speed_units_per_hour"/>
+            <field name="active"/>
+          </group>
+          <group string="Size-based Scaling">
+            <field name="scaling_mode"/>
+            <field name="ref_metric"/>
+            <field name="ref_value"/>
+            <field name="scale_min"/>
+            <field name="scale_max"/>
+          </group>
+          <group string="Size Rules">
+            <field name="rule_ids" mode="list,form"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Size Rule standalone views -->
+    <record id="view_corr_operation_size_rule_tree" model="ir.ui.view">
+      <field name="name">corr.operation.size.rule.list</field>
+      <field name="model">corr.operation.size.rule</field>
+      <field name="arch" type="xml">
+        <list editable="bottom">
+          <field name="sequence"/>
+          <field name="metric"/>
+          <field name="min_value"/>
+          <field name="max_value"/>
+          <field name="multiplier"/>
+        </list>
+      </field>
+    </record>
+    <record id="view_corr_operation_size_rule_form" model="ir.ui.view">
+      <field name="name">corr.operation.size.rule.form</field>
+      <field name="model">corr.operation.size.rule</field>
+      <field name="arch" type="xml">
+        <form string="Size Rule">
+          <group>
+            <field name="map_id"/>
+            <field name="sequence"/>
+          </group>
+          <group>
+            <field name="metric"/>
+            <field name="min_value"/>
+            <field name="max_value"/>
+            <field name="multiplier"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_corr_operation_map" model="ir.actions.act_window">
+      <field name="name">Operation Mapping</field>
+      <field name="res_model">corr.operation.map</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_corr_operation_map" name="Operation Mapping" parent="corr_mrp_bridge.menu_corr_bridge_root" action="corr_mrp_bridge.action_corr_operation_map" sequence="20" groups="corrugation_formula_engine_v2.group_corr_manager"/>
+  </data>
+</odoo>

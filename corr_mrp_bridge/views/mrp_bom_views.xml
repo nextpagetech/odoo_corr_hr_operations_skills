@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="view_mrp_bom_form_inherit_corr_spec" model="ir.ui.view">
+      <field name="name">mrp.bom.form.inherit.corr.spec</field>
+      <field name="model">mrp.bom</field>
+      <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='miscellaneous']" position="after">
+          <page string="Versioning" name="corr_engine_v2">
+            <group string="Versioning" name="corr_engine_v2_versioning" col="2">
+              <field name="corr_engine_v2_generated" string="Engine V2 Generated" readonly="1"/>
+              <field name="corr_is_current_engine_v2_bom" string="Current Engine V2 BoM" readonly="1"/>
+              <field name="corr_engine_v2_version" string="BoM Version" readonly="1"/>
+              <field name="corr_superseded_by_bom_id" string="Superseded By" readonly="1"/>
+            </group>
+          </page>
+        </xpath>
+        <!-- Show Engine V2 UoM warnings in a dedicated section when present -->
+        <xpath expr="//sheet" position="inside">
+          <group class="alert alert-warning">
+            <separator string="Engine UoM Warnings" colspan="4"/>
+            <field name="corr_uom_warning_text" readonly="1" nolabel="1"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Show corrugation metadata (Role/Flute/Layer) on BoM component lines -->
+    <record id="view_mrp_bom_line_tree_inherit_corr_role" model="ir.ui.view">
+      <field name="name">mrp.bom.line.tree.inherit.corr.role</field>
+      <field name="model">mrp.bom</field>
+      <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+      <field name="arch" type="xml">
+        <!-- Insert Role/Flute/Layer after the component product -->
+        <xpath expr="//field[@name='bom_line_ids']//list/field[@name='product_id']" position="after">
+          <field name="corr_role_display" optional="show" readonly="1"/>
+          <field name="corr_flute_code" optional="show"/>
+          <field name="corr_layer_no" optional="show"/>
+        </xpath>
+        <!-- Keep exact stored qty, but show a cleaner 2-decimal value in the
+             BoM Components list for corrugation users. -->
+        <xpath expr="//field[@name='bom_line_ids']//list/field[@name='product_qty']" position="attributes">
+          <attribute name="digits">[16, 4]</attribute>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Inherit the standard Operations tree view to add seconds column -->
+    <!-- Removed generic tree insertion to avoid duplicate columns on inherited BoM tree -->
+
+    <!-- Also extend the specific BoM operations tree used on the BoM form -->
+    <record id="view_routing_workcenter_bom_tree_inherit_corr_time_sec" model="ir.ui.view">
+      <field name="name">mrp.routing.workcenter.bom.tree.inherit.corr.time.sec</field>
+      <field name="model">mrp.routing.workcenter</field>
+      <field name="inherit_id" ref="mrp.mrp_routing_workcenter_bom_tree_view"/>
+      <field name="arch" type="xml">
+        <!-- Insert seconds after the computed Duration (minutes). This tree is the one used on the BoM form. -->
+        <xpath expr="//field[@name='time_cycle']" position="after">
+          <field name="time_cycle_manual_sec" optional="show" digits="[16, 3]"/>
+        </xpath>
+        <!-- Fallback for variants that only show manual minutes -->
+        <!-- Drop the original Manual Duration (minutes) column on the BoM Operations tab
+             to avoid duplicate 'Manual Dur.' headers; use the seconds helper instead. -->
+        <xpath expr="//field[@name='time_cycle_manual']" position="replace"/>
+        <!-- Remove the 'Archive Operation' link column from the BoM Operations list -->
+        <xpath expr="//button[@name='action_archive']" position="replace"/>
+      </field>
+    </record>
+
+    <!-- Cleanup view removed to avoid XPath errors on instances where the base tree has no seconds column. -->
+  </data>
+</odoo>

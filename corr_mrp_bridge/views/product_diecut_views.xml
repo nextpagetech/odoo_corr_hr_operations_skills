@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Inherit product form to add Diecuts tab -->
+        <record id="view_product_form_inherit_corr_diecuts" model="ir.ui.view">
+            <field name="name">product.template.form.inherit.corr.diecuts</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Diecuts" name="corr_diecuts">
+                        <group>
+                            <field name="diecut_ids" widget="many2many_tags" context="{}" domain="[('category_id', 'child_of', categ_id)]"/>
+                            <field name="primary_diecut_id" domain="[('category_id', 'child_of', categ_id)]"/>
+                        </group>
+                        <div class="o_form_label text-muted">Optional: primary diecut is the preferred tool; others are alternates.</div>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
